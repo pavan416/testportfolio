@@ -1,878 +1,2353 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pavan Kalyan — Creative Designer &amp; Motion Artist</title>
-<meta name="description" content="Pavan Kalyan — brand identity, motion graphics and video craft for founders and creators.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Kalyan — Creative Designer &amp; Motion Artist</title>
+  <meta name="description"
+    content="Pavan Kalyan — brand identity, motion graphics and video craft for founders and creators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ============================================================
    DESIGN TOKENS
    Palette: near-black / frame surfaces / cool violet-blue accent
    Display+UI: Plus Jakarta Sans   Body: Inter
 ============================================================ */
-[data-theme="dark"]{
-  --bg:        #050507;
-  --bg2:       #0a0a0d;
-  --frame:     #121218;
-  --frame2:    #18181f;
-  --surface:   rgba(255,255,255,0.035);
-  --surface2:  rgba(255,255,255,0.06);
-  --border:    rgba(255,255,255,0.10);
-  --border2:   rgba(255,255,255,0.18);
-  --text:      #f5f5f7;
-  --text2:     rgba(245,245,247,0.60);
-  --text3:     rgba(245,245,247,0.36);
-  --accent:    #6e6bff;
-  --accent2:   #9b8aff;
-  --accent-soft: rgba(110,107,255,0.12);
-  --accent-glow: rgba(110,107,255,0.30);
-  --pink-glow: rgba(155,90,220,0.18);
-  --nav-bg:    rgba(5,5,7,0.7);
-  --shadow:    0 4px 40px rgba(0,0,0,0.5);
-  --shadow2:   0 30px 100px rgba(0,0,0,0.6);
-  --overlay:   linear-gradient(to top, rgba(5,5,7,0.95) 0%, rgba(5,5,7,0.25) 60%, transparent 100%);
-}
-[data-theme="light"]{
-  --bg:        #f3f3f6;
-  --bg2:       #ebebf0;
-  --frame:     #ffffff;
-  --frame2:    #f5f5f9;
-  --surface:   rgba(20,20,30,0.03);
-  --surface2:  rgba(20,20,30,0.05);
-  --border:    rgba(20,20,30,0.1);
-  --border2:   rgba(20,20,30,0.16);
-  --text:      #131318;
-  --text2:     rgba(19,19,24,0.62);
-  --text3:     rgba(19,19,24,0.4);
-  --accent:    #5854e6;
-  --accent2:   #4642c4;
-  --accent-soft: rgba(88,84,230,0.08);
-  --accent-glow: rgba(88,84,230,0.22);
-  --pink-glow: rgba(155,90,220,0.14);
-  --nav-bg:    rgba(243,243,246,0.78);
-  --shadow:    0 4px 30px rgba(20,20,30,0.06);
-  --shadow2:   0 30px 80px rgba(20,20,30,0.1);
-  --overlay:   linear-gradient(to top, rgba(243,243,246,0.95) 0%, rgba(243,243,246,0.25) 60%, transparent 100%);
-}
+    [data-theme="dark"] {
+      --bg: #050507;
+      --bg2: #0a0a0d;
+      --frame: #121218;
+      --frame2: #18181f;
+      --surface: rgba(255, 255, 255, 0.035);
+      --surface2: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.10);
+      --border2: rgba(255, 255, 255, 0.18);
+      --text: #f5f5f7;
+      --text2: rgba(245, 245, 247, 0.60);
+      --text3: rgba(245, 245, 247, 0.36);
+      --accent: #6e6bff;
+      --accent2: #9b8aff;
+      --accent-soft: rgba(110, 107, 255, 0.12);
+      --accent-glow: rgba(110, 107, 255, 0.30);
+      --pink-glow: rgba(155, 90, 220, 0.18);
+      --nav-bg: rgba(5, 5, 7, 0.7);
+      --shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+      --shadow2: 0 30px 100px rgba(0, 0, 0, 0.6);
+      --overlay: linear-gradient(to top, rgba(5, 5, 7, 0.95) 0%, rgba(5, 5, 7, 0.25) 60%, transparent 100%);
+    }
 
-*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
-html{ scroll-behavior:smooth; }
-body{
-  background:var(--bg); color:var(--text);
-  font-family:'Inter',sans-serif;
-  font-size:16px; line-height:1.65;
-  overflow-x:hidden;
-  transition:background .5s ease,color .5s ease;
-}
-::selection{ background:var(--accent-soft); color:var(--text); }
-img,svg{ display:block; max-width:100%; }
-a{ color:inherit; text-decoration:none; }
-button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
-.container{ max-width:1240px; margin:0 auto; padding:0 3rem; }
-@media(max-width:640px){ .container{ padding:0 1.3rem; } }
+    [data-theme="light"] {
+      --bg: #f3f3f6;
+      --bg2: #ebebf0;
+      --frame: #ffffff;
+      --frame2: #f5f5f9;
+      --surface: rgba(20, 20, 30, 0.03);
+      --surface2: rgba(20, 20, 30, 0.05);
+      --border: rgba(20, 20, 30, 0.1);
+      --border2: rgba(20, 20, 30, 0.16);
+      --text: #131318;
+      --text2: rgba(19, 19, 24, 0.62);
+      --text3: rgba(19, 19, 24, 0.4);
+      --accent: #5854e6;
+      --accent2: #4642c4;
+      --accent-soft: rgba(88, 84, 230, 0.08);
+      --accent-glow: rgba(88, 84, 230, 0.22);
+      --pink-glow: rgba(155, 90, 220, 0.14);
+      --nav-bg: rgba(243, 243, 246, 0.78);
+      --shadow: 0 4px 30px rgba(20, 20, 30, 0.06);
+      --shadow2: 0 30px 80px rgba(20, 20, 30, 0.1);
+      --overlay: linear-gradient(to top, rgba(243, 243, 246, 0.95) 0%, rgba(243, 243, 246, 0.25) 60%, transparent 100%);
+    }
 
-h1,h2,h3{ font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; letter-spacing:-.02em; }
-em{ font-style:normal; color:var(--accent2); }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.eyebrow{
-  font-family:'Plus Jakarta Sans',sans-serif; font-size:.74rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--accent2); display:flex; align-items:center; gap:.6em; margin-bottom:1.3rem;
-}
-.eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 12px var(--accent-glow); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-::-webkit-scrollbar{ width:9px; }
-::-webkit-scrollbar-track{ background:var(--bg); }
-::-webkit-scrollbar-thumb{ background:var(--border2); border-radius:6px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background .5s ease, color .5s ease;
+    }
 
-.reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1); }
-.reveal.in{ opacity:1; transform:translateY(0); }
+    ::selection {
+      background: var(--accent-soft);
+      color: var(--text);
+    }
 
-@media(prefers-reduced-motion:reduce){
-  *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
-  .reveal{ opacity:1; transform:none; }
-}
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
 
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-  outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* ============================================================
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    @media(max-width:640px) {
+      .container {
+        padding: 0 1.3rem;
+      }
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    em {
+      font-style: normal;
+      color: var(--accent2);
+    }
+
+    .eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .74rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      display: flex;
+      align-items: center;
+      gap: .6em;
+      margin-bottom: 1.3rem;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border2);
+      border-radius: 6px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s cubic-bezier(.16, 1, .3, 1), transform .8s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ============================================================
    CURSOR
 ============================================================ */
-.cursor{ position:fixed; top:0; left:0; width:7px; height:7px; background:var(--accent2); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); }
-.cursor-ring{ position:fixed; top:0; left:0; width:34px; height:34px; border:1px solid var(--border2); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:width .3s cubic-bezier(.16,1,.3,1),height .3s cubic-bezier(.16,1,.3,1),border-radius .3s ease,border-color .3s ease; }
-.cursor-ring.frame{ border-radius:10px; width:60px; height:60px; border-color:var(--accent); }
-@media(hover:none),(pointer:coarse){ .cursor,.cursor-ring{ display:none; } }
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      background: var(--accent2);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
 
-/* ============================================================
+    .cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--border2);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .3s cubic-bezier(.16, 1, .3, 1), height .3s cubic-bezier(.16, 1, .3, 1), border-radius .3s ease, border-color .3s ease;
+    }
+
+    .cursor-ring.frame {
+      border-radius: 10px;
+      width: 60px;
+      height: 60px;
+      border-color: var(--accent);
+    }
+
+    @media(hover:none), (pointer:coarse) {
+
+      .cursor,
+      .cursor-ring {
+        display: none;
+      }
+    }
+
+    /* ============================================================
    NAV — rounded pill nav
 ============================================================ */
-nav{ position:fixed; top:1.1rem; left:0; right:0; z-index:200; display:flex; justify-content:center; padding:0 1.3rem; }
-.nav-pill{
-  display:flex; align-items:center; justify-content:space-between; gap:2.4rem;
-  width:100%; max-width:980px; padding:.6rem .7rem .6rem 1.3rem;
-  background:var(--nav-bg); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--border); border-radius:100px; box-shadow:var(--shadow);
-  transition:all .4s ease;
-}
-.nav-logo{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.02rem; font-weight:700; letter-spacing:-.01em; display:flex; align-items:center; gap:.5rem; }
-.nav-logo .dot{ width:9px; height:9px; border-radius:50%; background:var(--accent); box-shadow:0 0 14px var(--accent-glow); }
-.nav-links{ display:flex; align-items:center; gap:2rem; list-style:none; }
-.nav-links a{ font-size:.84rem; font-weight:500; color:var(--text2); transition:color .3s ease; }
-.nav-links a:hover{ color:var(--text); }
-.nav-right{ display:flex; align-items:center; gap:.6rem; }
-.theme-toggle{ width:38px; height:38px; border-radius:50%; background:var(--surface2); border:1px solid var(--border2); display:flex; align-items:center; justify-content:center; font-size:.85rem; transition:all .3s ease; }
-.theme-toggle:hover{ border-color:var(--accent); }
-.nav-cta{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.8rem; font-weight:600; padding:.65rem 1.2rem; border-radius:100px; background:var(--text); color:var(--bg); transition:all .3s ease; white-space:nowrap; }
-.nav-cta:hover{ background:var(--accent); color:#fff; transform:translateY(-1px); }
-.nav-burger{ display:none; flex-direction:column; gap:4px; width:22px; padding:.4rem; }
-.nav-burger span{ height:1.5px; background:var(--text); width:100%; border-radius:2px; }
-@media(max-width:880px){ .nav-links{ display:none; } .nav-burger{ display:flex; } }
-@media(max-width:480px){
-  .nav-pill{ gap:.8rem; padding:.5rem .5rem .5rem 1rem; }
-  .nav-logo{ font-size:.92rem; white-space:nowrap; }
-  .nav-cta{ font-size:.74rem; padding:.55rem .9rem; }
-}
+    nav {
+      position: fixed;
+      top: 1.1rem;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: center;
+      padding: 0 1.3rem;
+    }
 
-/* ============================================================
+    .nav-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.4rem;
+      width: 100%;
+      max-width: 980px;
+      padding: .6rem .7rem .6rem 1.3rem;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      box-shadow: var(--shadow);
+      transition: all .4s ease;
+    }
+
+    .nav-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .nav-logo .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--text2);
+      transition: color .3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .85rem;
+      transition: all .3s ease;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+    }
+
+    .nav-cta {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      padding: .65rem 1.2rem;
+      border-radius: 100px;
+      background: var(--text);
+      color: var(--bg);
+      transition: all .3s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      width: 22px;
+      padding: .4rem;
+    }
+
+    .nav-burger span {
+      height: 1.5px;
+      background: var(--text);
+      width: 100%;
+      border-radius: 2px;
+    }
+
+    @media(max-width:880px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-burger {
+        display: flex;
+      }
+    }
+
+    @media(max-width:480px) {
+      .nav-pill {
+        gap: .8rem;
+        padding: .5rem .5rem .5rem 1rem;
+      }
+
+      .nav-logo {
+        font-size: .92rem;
+        white-space: nowrap;
+      }
+
+      .nav-cta {
+        font-size: .74rem;
+        padding: .55rem .9rem;
+      }
+    }
+
+    /* ============================================================
    HERO — framed device card with ambient glow
 ============================================================ */
-#hero{ position:relative; padding:8.5rem 1.3rem 5rem; display:flex; flex-direction:column; align-items:center; overflow:hidden; }
-.hero-glow{ position:absolute; top:6%; left:50%; transform:translateX(-50%); width:900px; height:560px; background:radial-gradient(ellipse,var(--accent-glow) 0%,var(--pink-glow) 38%,transparent 72%); filter:blur(50px); pointer-events:none; z-index:0; }
-.hero-top{ position:relative; z-index:2; text-align:center; max-width:760px; margin:0 auto 3.2rem; }
-.hero-eyebrow{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.78rem; font-weight:600; letter-spacing:.06em; color:var(--accent2); margin-bottom:1.4rem; display:inline-flex; align-items:center; gap:.55em; padding:.5rem 1rem; border:1px solid var(--border2); border-radius:100px; background:var(--surface); }
-.hero-eyebrow .dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent-glow); }
-.hero-h1{ font-size:clamp(2.3rem,5.6vw,4.4rem); line-height:1.08; font-weight:700; letter-spacing:-.03em; }
-.hero-h1 em{ color:var(--accent2); font-style:normal; }
-.hero-sub{ margin-top:1.5rem; font-size:1.02rem; color:var(--text2); max-width:560px; margin-left:auto; margin-right:auto; line-height:1.7; }
-.hero-actions{ display:flex; gap:.9rem; justify-content:center; margin-top:2.2rem; flex-wrap:wrap; }
-.btn-solid{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.85rem; font-weight:600; background:var(--text); color:var(--bg); padding:.95rem 1.7rem; border-radius:100px; transition:all .35s cubic-bezier(.16,1,.3,1); display:inline-flex; align-items:center; gap:.5em; }
-.btn-solid:hover{ background:var(--accent); color:#fff; transform:translateY(-2px); box-shadow:0 14px 34px var(--accent-glow); }
-.btn-outline{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.85rem; font-weight:600; border:1px solid var(--border2); color:var(--text); padding:.95rem 1.7rem; border-radius:100px; transition:all .3s ease; }
-.btn-outline:hover{ border-color:var(--accent); color:var(--accent2); }
+    #hero {
+      position: relative;
+      padding: 8.5rem 1.3rem 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
 
-/* the framed mock window */
-.hero-frame-wrap{ position:relative; z-index:2; width:100%; max-width:1080px; margin:0 auto; }
-.hero-frame{
-  position:relative; border-radius:22px; border:1px solid var(--border2); background:var(--frame);
-  box-shadow:var(--shadow2); overflow:hidden; aspect-ratio:16/9.4;
-}
-.hero-frame-bar{ display:flex; align-items:center; gap:.4rem; padding:.9rem 1.2rem; border-bottom:1px solid var(--border); }
-.hero-frame-bar i{ width:9px; height:9px; border-radius:50%; background:var(--border2); }
-.hero-frame-bar .url{ margin-left:.8rem; font-family:'Plus Jakarta Sans',sans-serif; font-size:.7rem; color:var(--text3); background:var(--surface2); padding:.3rem .9rem; border-radius:100px; }
-.hero-frame-body{ position:relative; height:calc(100% - 42px); display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,1fr); gap:.7rem; padding:1rem; }
-.hero-tile{ border-radius:12px; position:relative; overflow:hidden; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; }
-.hero-tile span{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.62rem; font-weight:600; letter-spacing:.04em; color:rgba(255,255,255,.55); text-transform:uppercase; }
-.hero-tile.big{ grid-column:span 2; grid-row:span 2; }
-@media(max-width:640px){
-  .hero-frame-body{ grid-template-columns:repeat(2,1fr); grid-template-rows:repeat(4,1fr); }
-  .hero-tile.big{ grid-column:span 2; grid-row:span 2; }
-}
+    .hero-glow {
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 560px;
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, var(--pink-glow) 38%, transparent 72%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.hero-stats{ position:relative; z-index:2; display:flex; gap:2.6rem; justify-content:center; margin-top:2.6rem; flex-wrap:wrap; }
-.hero-stat-num{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.5rem; font-weight:700; color:var(--text); }
-.hero-stat-label{ font-size:.74rem; color:var(--text3); margin-top:.2rem; }
+    .hero-top {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.2rem;
+    }
 
-/* ============================================================
+    .hero-eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      color: var(--accent2);
+      margin-bottom: 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .55em;
+      padding: .5rem 1rem;
+      border: 1px solid var(--border2);
+      border-radius: 100px;
+      background: var(--surface);
+    }
+
+    .hero-eyebrow .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .hero-h1 {
+      font-size: clamp(2.3rem, 5.6vw, 4.4rem);
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+
+    .hero-h1 em {
+      color: var(--accent2);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: 1.02rem;
+      color: var(--text2);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: .9rem;
+      justify-content: center;
+      margin-top: 2.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-solid {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      background: var(--text);
+      color: var(--bg);
+      padding: .95rem 1.7rem;
+      border-radius: 100px;
+      transition: all .35s cubic-bezier(.16, 1, .3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: .5em;
+    }
+
+    .btn-solid:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px var(--accent-glow);
+    }
+
+    .btn-outline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      border: 1px solid var(--border2);
+      color: var(--text);
+      padding: .95rem 1.7rem;
+      border-radius: 100px;
+      transition: all .3s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent2);
+    }
+
+    /* the framed mock window */
+    .hero-frame-wrap {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .hero-frame {
+      position: relative;
+      border-radius: 22px;
+      border: 1px solid var(--border2);
+      background: var(--frame);
+      box-shadow: var(--shadow2);
+      overflow: hidden;
+      aspect-ratio: 16/9.4;
+    }
+
+    .hero-frame-bar {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .9rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-frame-bar i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--border2);
+    }
+
+    .hero-frame-bar .url {
+      margin-left: .8rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .7rem;
+      color: var(--text3);
+      background: var(--surface2);
+      padding: .3rem .9rem;
+      border-radius: 100px;
+    }
+
+    .hero-frame-body {
+      position: relative;
+      height: calc(100% - 42px);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: .7rem;
+      padding: 1rem;
+    }
+
+    .hero-tile {
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-tile span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: rgba(255, 255, 255, .55);
+      text-transform: uppercase;
+    }
+
+    .hero-tile.big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    @media(max-width:640px) {
+      .hero-frame-body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      .hero-tile.big {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+    }
+
+    .hero-stats {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 2.6rem;
+      justify-content: center;
+      margin-top: 2.6rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .hero-stat-label {
+      font-size: .74rem;
+      color: var(--text3);
+      margin-top: .2rem;
+    }
+
+    /* ============================================================
    MARQUEE
 ============================================================ */
-.marquee-wrap{ border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:1.4rem 0; overflow:hidden; margin-top:5rem; }
-.marquee-track{ display:flex; width:max-content; animation:marquee 36s linear infinite; }
-.marquee-track:hover{ animation-play-state:paused; }
-@keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-.marquee-item{ font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; font-size:1.2rem; color:var(--text3); padding:0 1.8rem; white-space:nowrap; display:flex; align-items:center; gap:1.8rem; }
-.marquee-item::after{ content:'✦'; font-size:.7rem; color:var(--accent); margin-left:1.8rem; }
+    .marquee-wrap {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.4rem 0;
+      overflow: hidden;
+      margin-top: 5rem;
+    }
 
-/* ============================================================
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 36s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-item {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text3);
+      padding: 0 1.8rem;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .marquee-item::after {
+      content: '✦';
+      font-size: .7rem;
+      color: var(--accent);
+      margin-left: 1.8rem;
+    }
+
+    /* ============================================================
    SECTION SHARED
 ============================================================ */
-section{ padding:7rem 3rem; position:relative; }
-@media(max-width:640px){ section{ padding:5rem 1.3rem; } }
-.section-h2{ font-size:clamp(1.9rem,3.6vw,2.8rem); margin:0 0 1.1rem; line-height:1.12; letter-spacing:-.02em; }
+    section {
+      padding: 7rem 3rem;
+      position: relative;
+    }
 
-/* ============================================================
+    @media(max-width:640px) {
+      section {
+        padding: 5rem 1.3rem;
+      }
+    }
+
+    .section-h2 {
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      margin: 0 0 1.1rem;
+      line-height: 1.12;
+      letter-spacing: -.02em;
+    }
+
+    /* ============================================================
    ABOUT
 ============================================================ */
-.about-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:4rem; align-items:start; }
-@media(max-width:920px){ .about-grid{ grid-template-columns:1fr; gap:2.6rem; } }
-.manifesto-line{ font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(1.3rem,2.3vw,1.9rem); line-height:1.36; font-weight:600; color:var(--text); margin-bottom:.25rem; letter-spacing:-.01em; }
-.manifesto-line.muted{ color:var(--text3); font-weight:500; }
-.about-divider{ width:42px; height:2px; border-radius:2px; background:var(--accent); margin:1.9rem 0; }
-.about-para{ font-size:.96rem; line-height:1.85; color:var(--text2); max-width:520px; }
-.about-timeline{ display:flex; flex-direction:column; margin-top:2.2rem; }
-.tl-item{ display:flex; gap:1.2rem; padding-bottom:1.7rem; }
-.tl-left{ display:flex; flex-direction:column; align-items:center; }
-.tl-dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); flex-shrink:0; margin-top:.3rem; box-shadow:0 0 10px var(--accent-glow); }
-.tl-connector{ width:1px; flex:1; background:var(--border2); margin:.4rem 0; }
-.tl-year{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.74rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--accent2); margin-bottom:.3rem; }
-.tl-desc{ font-size:.87rem; color:var(--text2); line-height:1.7; max-width:380px; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 4rem;
+      align-items: start;
+    }
 
-.stat-row{ display:grid; grid-template-columns:1fr 1fr; gap:.9rem; margin-bottom:1.1rem; }
-.stat-card{ background:var(--frame); border:1px solid var(--border); border-radius:16px; padding:1.6rem 1.4rem; }
-.stat-num{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.9rem; font-weight:700; color:var(--text); }
-.stat-label{ font-size:.74rem; color:var(--text3); margin-top:.3rem; }
-.avail-card{ border:1px solid var(--border2); border-radius:18px; padding:1.8rem; background:linear-gradient(160deg,var(--accent-soft),transparent 60%),var(--frame); position:relative; }
-.avail-title{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.8rem; font-weight:700; color:var(--text); margin-bottom:.8rem; display:flex; align-items:center; gap:.55em; }
-.avail-title .pulse{ width:8px; height:8px; border-radius:50%; background:#36e07c; box-shadow:0 0 10px #36e07c; }
-.avail-desc{ font-size:.86rem; color:var(--text2); line-height:1.75; margin-bottom:1.4rem; }
+    @media(max-width:920px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.6rem;
+      }
+    }
 
-/* ============================================================
+    .manifesto-line {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.3rem, 2.3vw, 1.9rem);
+      line-height: 1.36;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .25rem;
+      letter-spacing: -.01em;
+    }
+
+    .manifesto-line.muted {
+      color: var(--text3);
+      font-weight: 500;
+    }
+
+    .about-divider {
+      width: 42px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--accent);
+      margin: 1.9rem 0;
+    }
+
+    .about-para {
+      font-size: .96rem;
+      line-height: 1.85;
+      color: var(--text2);
+      max-width: 520px;
+    }
+
+    .about-timeline {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2.2rem;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 1.2rem;
+      padding-bottom: 1.7rem;
+    }
+
+    .tl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .tl-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      margin-top: .3rem;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    .tl-connector {
+      width: 1px;
+      flex: 1;
+      background: var(--border2);
+      margin: .4rem 0;
+    }
+
+    .tl-year {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: .3rem;
+    }
+
+    .tl-desc {
+      font-size: .87rem;
+      color: var(--text2);
+      line-height: 1.7;
+      max-width: 380px;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .9rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .stat-card {
+      background: var(--frame);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem;
+    }
+
+    .stat-num {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: .74rem;
+      color: var(--text3);
+      margin-top: .3rem;
+    }
+
+    .avail-card {
+      border: 1px solid var(--border2);
+      border-radius: 18px;
+      padding: 1.8rem;
+      background: linear-gradient(160deg, var(--accent-soft), transparent 60%), var(--frame);
+      position: relative;
+    }
+
+    .avail-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .8rem;
+      display: flex;
+      align-items: center;
+      gap: .55em;
+    }
+
+    .avail-title .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #36e07c;
+      box-shadow: 0 0 10px #36e07c;
+    }
+
+    .avail-desc {
+      font-size: .86rem;
+      color: var(--text2);
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+
+    /* ============================================================
    SERVICES — bento grid, rounded cards
 ============================================================ */
-.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-@media(max-width:920px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
-@media(max-width:600px){ .services-grid{ grid-template-columns:1fr; } }
-.service-card{ border:1px solid var(--border); border-radius:18px; padding:1.9rem; background:var(--frame); transition:all .35s cubic-bezier(.16,1,.3,1); position:relative; overflow:hidden; }
-.service-card:hover{ border-color:var(--border2); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.25); }
-.service-card::before{ content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,var(--accent-glow),transparent); opacity:0; transition:opacity .35s ease; }
-.service-card:hover::before{ opacity:1; }
-.service-icon{ width:42px; height:42px; border-radius:12px; background:var(--accent-soft); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--accent2); margin-bottom:1.3rem; }
-.service-name{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.08rem; font-weight:700; margin-bottom:.6rem; letter-spacing:-.01em; }
-.service-desc{ font-size:.85rem; color:var(--text2); line-height:1.7; }
-.service-cta{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.75rem; font-weight:600; color:var(--text3); margin-top:1.2rem; display:inline-flex; align-items:center; gap:.3em; transition:all .3s ease; }
-.service-card:hover .service-cta{ color:var(--accent2); gap:.5em; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
 
-/* ============================================================
+    @media(max-width:920px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.9rem;
+      background: var(--frame);
+      transition: all .35s cubic-bezier(.16, 1, .3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .25);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--accent2);
+      margin-bottom: 1.3rem;
+    }
+
+    .service-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      letter-spacing: -.01em;
+    }
+
+    .service-desc {
+      font-size: .85rem;
+      color: var(--text2);
+      line-height: 1.7;
+    }
+
+    .service-cta {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text3);
+      margin-top: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .3em;
+      transition: all .3s ease;
+    }
+
+    .service-card:hover .service-cta {
+      color: var(--accent2);
+      gap: .5em;
+    }
+
+    /* ============================================================
    PROJECTS — bento grid rounded tiles
 ============================================================ */
-.projects-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; grid-auto-rows:260px; }
-@media(max-width:1080px){ .projects-grid{ grid-template-columns:repeat(2,1fr); } }
-@media(max-width:640px){ .projects-grid{ grid-template-columns:1fr; grid-auto-rows:230px; } }
-.project-card{ position:relative; border-radius:18px; overflow:hidden; cursor:pointer; border:1px solid var(--border); background:var(--frame); transition:border-color .35s ease,transform .35s ease; }
-.project-card:hover{ border-color:var(--border2); transform:translateY(-3px); }
-.project-card.tall{ grid-row:span 2; }
-.project-card.wide{ grid-column:span 2; }
-@media(max-width:640px){ .project-card.tall,.project-card.wide{ grid-column:span 1; grid-row:span 1; } }
-.project-placeholder{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; transition:transform .6s cubic-bezier(.16,1,.3,1); }
-.project-card:hover .project-placeholder{ transform:scale(1.05); }
-.proj1{ background:radial-gradient(circle at 30% 20%,#2a2440,#0d0d12 70%); }
-.proj2{ background:radial-gradient(circle at 70% 30%,#162a3a,#0d0d12 70%); }
-.proj3{ background:radial-gradient(circle at 50% 70%,#2a1a30,#0d0d12 70%); }
-.proj4{ background:radial-gradient(circle at 30% 70%,#1a2a3a,#0d0d12 70%); }
-.proj5{ background:radial-gradient(circle at 60% 40%,#22203a,#0d0d12 70%); }
-.proj6{ background:radial-gradient(circle at 40% 30%,#1c2a2a,#0d0d12 70%); }
-.proj7{ background:radial-gradient(circle at 60% 60%,#2a1a2a,#0d0d12 70%); }
-.proj8{ background:radial-gradient(circle at 30% 40%,#2a2014,#0d0d12 70%); }
-.proj9{ background:radial-gradient(circle at 70% 50%,#142a28,#0d0d12 70%); }
-.proj10{ background:radial-gradient(circle at 50% 30%,#241c34,#0d0d12 70%); }
-.project-overlay{ position:absolute; inset:0; background:var(--overlay); opacity:.6; transition:opacity .4s ease; }
-.project-card:hover .project-overlay{ opacity:.9; }
-.project-info{ position:absolute; left:0; right:0; bottom:0; padding:1.5rem; z-index:2; }
-.project-cat{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--accent2); margin-bottom:.5rem; }
-.project-name{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.15rem; font-weight:700; color:#f5f5f7; margin-bottom:.7rem; line-height:1.25; letter-spacing:-.01em; }
-.project-tags{ display:flex; gap:.45rem; flex-wrap:wrap; margin-bottom:.85rem; }
-.project-tag{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.62rem; font-weight:600; color:rgba(245,245,247,.7); border:1px solid rgba(245,245,247,.16); padding:.28rem .65rem; border-radius:100px; }
-.preview-btn{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.72rem; font-weight:600; color:#fff; opacity:0; transform:translateY(6px); transition:all .35s ease; display:inline-flex; align-items:center; gap:.4em; }
-.project-card:hover .preview-btn{ opacity:1; transform:translateY(0); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+      grid-auto-rows: 260px;
+    }
 
-/* ============================================================
+    @media(max-width:1080px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:640px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 230px;
+      }
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--frame);
+      transition: border-color .35s ease, transform .35s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-3px);
+    }
+
+    .project-card.tall {
+      grid-row: span 2;
+    }
+
+    .project-card.wide {
+      grid-column: span 2;
+    }
+
+    @media(max-width:640px) {
+
+      .project-card.tall,
+      .project-card.wide {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+    }
+
+    .project-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .6s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .project-card:hover .project-placeholder {
+      transform: scale(1.05);
+    }
+
+    .proj1 {
+      background: radial-gradient(circle at 30% 20%, #2a2440, #0d0d12 70%);
+    }
+
+    .proj2 {
+      background: radial-gradient(circle at 70% 30%, #162a3a, #0d0d12 70%);
+    }
+
+    .proj3 {
+      background: radial-gradient(circle at 50% 70%, #2a1a30, #0d0d12 70%);
+    }
+
+    .proj4 {
+      background: radial-gradient(circle at 30% 70%, #1a2a3a, #0d0d12 70%);
+    }
+
+    .proj5 {
+      background: radial-gradient(circle at 60% 40%, #22203a, #0d0d12 70%);
+    }
+
+    .proj6 {
+      background: radial-gradient(circle at 40% 30%, #1c2a2a, #0d0d12 70%);
+    }
+
+    .proj7 {
+      background: radial-gradient(circle at 60% 60%, #2a1a2a, #0d0d12 70%);
+    }
+
+    .proj8 {
+      background: radial-gradient(circle at 30% 40%, #2a2014, #0d0d12 70%);
+    }
+
+    .proj9 {
+      background: radial-gradient(circle at 70% 50%, #142a28, #0d0d12 70%);
+    }
+
+    .proj10 {
+      background: radial-gradient(circle at 50% 30%, #241c34, #0d0d12 70%);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--overlay);
+      opacity: .6;
+      transition: opacity .4s ease;
+    }
+
+    .project-card:hover .project-overlay {
+      opacity: .9;
+    }
+
+    .project-info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1.5rem;
+      z-index: 2;
+    }
+
+    .project-cat {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: .5rem;
+    }
+
+    .project-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f5f5f7;
+      margin-bottom: .7rem;
+      line-height: 1.25;
+      letter-spacing: -.01em;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: .45rem;
+      flex-wrap: wrap;
+      margin-bottom: .85rem;
+    }
+
+    .project-tag {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .62rem;
+      font-weight: 600;
+      color: rgba(245, 245, 247, .7);
+      border: 1px solid rgba(245, 245, 247, .16);
+      padding: .28rem .65rem;
+      border-radius: 100px;
+    }
+
+    .preview-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: all .35s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: .4em;
+    }
+
+    .project-card:hover .preview-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
    MOTION SHOWCASE
 ============================================================ */
-.motion-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:3rem; }
-@media(max-width:980px){ .motion-grid{ grid-template-columns:repeat(2,1fr); } }
-@media(max-width:520px){ .motion-grid{ grid-template-columns:1fr; } }
-.motion-card{ cursor:pointer; }
-.motion-bg{ position:relative; aspect-ratio:3/4; border-radius:16px; overflow:hidden; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; transition:border-color .35s ease; background:var(--frame); }
-.motion-card:hover .motion-bg{ border-color:var(--border2); }
-.motion-play{ width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.08); backdrop-filter:blur(8px); border:1px solid var(--border2); display:flex; align-items:center; justify-content:center; color:#fff; font-size:.72rem; transition:all .35s cubic-bezier(.16,1,.3,1); position:relative; z-index:2; }
-.motion-card:hover .motion-play{ background:var(--accent); border-color:var(--accent); transform:scale(1.1); }
-.motion-label{ margin-top:.85rem; }
-.motion-title{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.92rem; font-weight:600; }
-.motion-sub{ font-size:.74rem; color:var(--text3); margin-top:.25rem; }
+    .motion-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
 
-/* ============================================================
+    @media(max-width:980px) {
+      .motion-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:520px) {
+      .motion-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .motion-card {
+      cursor: pointer;
+    }
+
+    .motion-bg {
+      position: relative;
+      aspect-ratio: 3/4;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .35s ease;
+      background: var(--frame);
+    }
+
+    .motion-card:hover .motion-bg {
+      border-color: var(--border2);
+    }
+
+    .motion-play {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .72rem;
+      transition: all .35s cubic-bezier(.16, 1, .3, 1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .motion-card:hover .motion-play {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    .motion-label {
+      margin-top: .85rem;
+    }
+
+    .motion-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .motion-sub {
+      font-size: .74rem;
+      color: var(--text3);
+      margin-top: .25rem;
+    }
+
+    /* ============================================================
    TESTIMONIALS
 ============================================================ */
-.quote-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:3rem; }
-@media(max-width:920px){ .quote-grid{ grid-template-columns:1fr; } }
-.quote-card{ border:1px solid var(--border); border-radius:18px; padding:2rem; background:var(--frame); }
-.quote-mark{ font-family:'Plus Jakarta Sans',sans-serif; font-size:2.2rem; color:var(--accent); line-height:1; margin-bottom:.6rem; display:block; font-weight:700; }
-.quote-text{ font-size:.95rem; line-height:1.65; color:var(--text); margin-bottom:1.5rem; }
-.quote-person{ display:flex; align-items:center; gap:.8rem; }
-.quote-avatar{ width:36px; height:36px; border-radius:50%; background:var(--accent-soft); border:1px solid var(--border2); display:flex; align-items:center; justify-content:center; font-family:'Plus Jakarta Sans',sans-serif; color:var(--accent2); font-size:.85rem; font-weight:700; flex-shrink:0; }
-.quote-name{ font-size:.83rem; font-weight:600; }
-.quote-role{ font-size:.74rem; color:var(--text3); margin-top:.1rem; }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+      margin-top: 3rem;
+    }
 
-/* ============================================================
+    @media(max-width:920px) {
+      .quote-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .quote-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      background: var(--frame);
+    }
+
+    .quote-mark {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.2rem;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: .6rem;
+      display: block;
+      font-weight: 700;
+    }
+
+    .quote-text {
+      font-size: .95rem;
+      line-height: 1.65;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-person {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .quote-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      border: 1px solid var(--border2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--accent2);
+      font-size: .85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .quote-name {
+      font-size: .83rem;
+      font-weight: 600;
+    }
+
+    .quote-role {
+      font-size: .74rem;
+      color: var(--text3);
+      margin-top: .1rem;
+    }
+
+    /* ============================================================
    CONTACT
 ============================================================ */
-#contact{ text-align:center; }
-.contact-inner{ max-width:760px; margin:0 auto; }
-.contact-h2{ font-size:clamp(2rem,4.6vw,3.4rem); line-height:1.12; margin-bottom:1.4rem; letter-spacing:-.02em; }
-.contact-sub{ color:var(--text2); font-size:.98rem; max-width:460px; margin:0 auto 2.4rem; line-height:1.75; }
-.contact-actions{ display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-bottom:3.6rem; }
-.contact-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; max-width:760px; margin:0 auto; }
-@media(max-width:640px){ .contact-grid{ grid-template-columns:1fr; } }
-.contact-item{ background:var(--frame); border:1px solid var(--border); border-radius:16px; padding:1.5rem 1.2rem; }
-.contact-item-label{ font-size:.68rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--text3); margin-bottom:.5rem; }
-.contact-item-value{ font-family:'Plus Jakarta Sans',sans-serif; font-size:.95rem; font-weight:600; color:var(--text); }
-.contact-item a:hover{ color:var(--accent2); }
+    #contact {
+      text-align: center;
+    }
 
-.contact-form{ max-width:560px; margin:3.6rem auto 0; text-align:left; display:grid; gap:1.2rem; background:var(--frame); border:1px solid var(--border); border-radius:20px; padding:2.2rem; }
-.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; }
-@media(max-width:560px){ .form-row{ grid-template-columns:1fr; } }
-.form-field label{ display:block; font-size:.72rem; font-weight:600; letter-spacing:.03em; text-transform:uppercase; color:var(--text3); margin-bottom:.55rem; }
-.form-input,.form-textarea{ width:100%; background:var(--surface2); border:1px solid var(--border2); border-radius:10px; color:var(--text); font-family:'Inter',sans-serif; font-size:.9rem; padding:.75rem .9rem; transition:border-color .3s ease; }
-.form-input:focus,.form-textarea:focus{ border-color:var(--accent); outline:none; }
-.form-textarea{ resize:vertical; min-height:90px; }
-.form-submit{ justify-self:start; margin-top:.3rem; }
-.form-note{ font-size:.78rem; color:var(--accent2); margin-top:.6rem; min-height:1em; }
+    .contact-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-/* ============================================================
+    .contact-h2 {
+      font-size: clamp(2rem, 4.6vw, 3.4rem);
+      line-height: 1.12;
+      margin-bottom: 1.4rem;
+      letter-spacing: -.02em;
+    }
+
+    .contact-sub {
+      color: var(--text2);
+      font-size: .98rem;
+      max-width: 460px;
+      margin: 0 auto 2.4rem;
+      line-height: 1.75;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: .9rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3.6rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .9rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    @media(max-width:640px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-item {
+      background: var(--frame);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem 1.2rem;
+    }
+
+    .contact-item-label {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: .5rem;
+    }
+
+    .contact-item-value {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact-item a:hover {
+      color: var(--accent2);
+    }
+
+    .contact-form {
+      max-width: 560px;
+      margin: 3.6rem auto 0;
+      text-align: left;
+      display: grid;
+      gap: 1.2rem;
+      background: var(--frame);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+    }
+
+    @media(max-width:560px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-field label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: .55rem;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      padding: .75rem .9rem;
+      transition: border-color .3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .form-submit {
+      justify-self: start;
+      margin-top: .3rem;
+    }
+
+    .form-note {
+      font-size: .78rem;
+      color: var(--accent2);
+      margin-top: .6rem;
+      min-height: 1em;
+    }
+
+    /* ============================================================
    FOOTER
 ============================================================ */
-footer{ border-top:1px solid var(--border); padding:3.4rem 3rem 2.4rem; }
-@media(max-width:640px){ footer{ padding:3rem 1.3rem 2rem; } }
-.footer-top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:2.4rem; margin-bottom:2.8rem; }
-.footer-logo{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.2rem; font-weight:700; display:flex; align-items:center; gap:.5rem; }
-.footer-logo .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); }
-.footer-tag{ font-size:.84rem; color:var(--text2); margin-top:.7rem; max-width:280px; line-height:1.7; }
-.footer-cols{ display:flex; gap:4rem; flex-wrap:wrap; }
-.footer-col-title{ font-size:.68rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--accent2); margin-bottom:1rem; }
-.footer-col a{ display:block; font-size:.84rem; color:var(--text2); margin-bottom:.65rem; transition:color .25s ease; }
-.footer-col a:hover{ color:var(--text); }
-.footer-bottom{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-top:1.8rem; border-top:1px solid var(--border); }
-.footer-copy{ font-size:.78rem; color:var(--text3); }
-.footer-social{ display:flex; gap:1.3rem; }
-.footer-social a{ font-size:.78rem; font-weight:500; color:var(--text2); transition:color .25s ease; }
-.footer-social a:hover{ color:var(--accent2); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3.4rem 3rem 2.4rem;
+    }
 
-/* ============================================================
+    @media(max-width:640px) {
+      footer {
+        padding: 3rem 1.3rem 2rem;
+      }
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2.4rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .footer-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .footer-logo .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .footer-tag {
+      font-size: .84rem;
+      color: var(--text2);
+      margin-top: .7rem;
+      max-width: 280px;
+      line-height: 1.7;
+    }
+
+    .footer-cols {
+      display: flex;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-col-title {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: .84rem;
+      color: var(--text2);
+      margin-bottom: .65rem;
+      transition: color .25s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-copy {
+      font-size: .78rem;
+      color: var(--text3);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.3rem;
+    }
+
+    .footer-social a {
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--text2);
+      transition: color .25s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--accent2);
+    }
+
+    /* ============================================================
    MODAL
 ============================================================ */
-.modal-overlay{ position:fixed; inset:0; z-index:500; background:rgba(0,0,0,.7); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .35s ease; }
-.modal-overlay.open{ opacity:1; pointer-events:auto; }
-.modal-box{ background:var(--frame); border:1px solid var(--border2); max-width:720px; width:100%; max-height:86vh; overflow-y:auto; border-radius:22px; transform:translateY(24px) scale(.98); transition:transform .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow2); }
-.modal-overlay.open .modal-box{ transform:translateY(0) scale(1); }
-.modal-head{ display:flex; align-items:flex-start; justify-content:space-between; padding:2rem 2rem 1.3rem; gap:1rem; border-bottom:1px solid var(--border); }
-.modal-cat{ font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--accent2); margin-bottom:.6rem; }
-.modal-title{ font-family:'Plus Jakarta Sans',sans-serif; font-size:1.5rem; font-weight:700; letter-spacing:-.01em; }
-.modal-close{ width:36px; height:36px; border:1px solid var(--border2); border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.95rem; color:var(--text2); transition:all .3s ease; }
-.modal-close:hover{ border-color:var(--accent); color:var(--accent2); transform:rotate(90deg); }
-.modal-body{ padding:1.7rem 2rem 2.2rem; }
-.modal-desc{ font-size:.92rem; line-height:1.85; color:var(--text2); margin-bottom:1.5rem; }
-.modal-meta{ display:flex; gap:2rem; flex-wrap:wrap; padding-top:1.3rem; border-top:1px solid var(--border); }
-.modal-meta-label{ font-size:.66rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--text3); margin-bottom:.4rem; }
-.modal-meta-value{ font-size:.86rem; color:var(--text); font-family:'Plus Jakarta Sans',sans-serif; font-weight:600; }
-</style>
-<noscript><style>.reveal{ opacity:1 !important; transform:none !important; }</style></noscript>
-</head>
-<body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-pill" id="navPill">
-    <a href="#hero" class="nav-logo"><span class="dot"></span>Pavan Kalyan</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Work</a></li>
-      <li><a href="#motion">Motion</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle light and dark theme">☀</button>
-      <a href="#contact" class="nav-cta">Start a Project</a>
-      <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-top">
-    <div class="hero-eyebrow"><span class="dot"></span>Available for new projects</div>
-    <h1 class="hero-h1">Crafting visual experiences <em>people remember.</em></h1>
-    <p class="hero-sub">Brand identity, motion graphics and video craft for founders and creators who want to stand out — not blend in.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn-solid">View Projects →</a>
-      <a href="#contact" class="btn-outline">Let's Collaborate</a>
-    </div>
-  </div>
-
-  <div class="hero-frame-wrap">
-    <div class="hero-frame">
-      <div class="hero-frame-bar">
-        <i></i><i></i><i></i>
-        <span class="url">pavankalyan.design</span>
-      </div>
-      <div class="hero-frame-body">
-        <div class="hero-tile big" style="background:radial-gradient(circle at 30% 30%,#2a2450,#0d0d12 75%)"><span>Brand Identity</span></div>
-        <div class="hero-tile" style="background:radial-gradient(circle at 60% 40%,#1c2a3a,#0d0d12 75%)"><span>Motion</span></div>
-        <div class="hero-tile" style="background:radial-gradient(circle at 40% 60%,#2a1a30,#0d0d12 75%)"><span>Video</span></div>
-        <div class="hero-tile" style="background:radial-gradient(circle at 50% 50%,#1a2a28,#0d0d12 75%)"><span>Packaging</span></div>
-        <div class="hero-tile" style="background:radial-gradient(circle at 50% 50%,#2a2014,#0d0d12 75%)"><span>UI/UX</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-stats">
-    <div><div class="hero-stat-num">150+</div><div class="hero-stat-label">Projects</div></div>
-    <div><div class="hero-stat-num">50+</div><div class="hero-stat-label">Clients</div></div>
-    <div><div class="hero-stat-num">5+</div><div class="hero-stat-label">Years</div></div>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track">
-    <span class="marquee-item">Brand Identity</span><span class="marquee-item">Motion Graphics</span><span class="marquee-item">Video Editing</span><span class="marquee-item">Logo Design</span><span class="marquee-item">Packaging Design</span><span class="marquee-item">Social Media</span><span class="marquee-item">UI Design</span><span class="marquee-item">Podcast Branding</span><span class="marquee-item">YouTube Content</span><span class="marquee-item">Marketing Creatives</span>
-    <span class="marquee-item">Brand Identity</span><span class="marquee-item">Motion Graphics</span><span class="marquee-item">Video Editing</span><span class="marquee-item">Logo Design</span><span class="marquee-item">Packaging Design</span><span class="marquee-item">Social Media</span><span class="marquee-item">UI Design</span><span class="marquee-item">Podcast Branding</span><span class="marquee-item">YouTube Content</span><span class="marquee-item">Marketing Creatives</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="container">
-    <div class="eyebrow">Creative Manifesto</div>
-    <div class="about-grid">
-      <div class="manifesto-block">
-        <div class="manifesto-line">I don't just design visuals.</div>
-        <div class="manifesto-line">I build <em>experiences.</em></div>
-        <div class="manifesto-line muted">Every frame, every color, every motion — crafted to capture attention and create impact.</div>
-        <div class="about-divider"></div>
-        <div class="about-para">I exist at the intersection of aesthetics and strategy — where art meets business and creativity drives results. Every project I take on is an opportunity to tell a story that resonates, a visual system that endures.</div>
-        <div class="about-timeline">
-          <div class="tl-item reveal">
-            <div class="tl-left"><div class="tl-dot"></div><div class="tl-connector"></div></div>
-            <div><div class="tl-year">The Beginning</div><div class="tl-desc">Started crafting visual stories for brands and creators worldwide.</div></div>
-          </div>
-          <div class="tl-item reveal" style="transition-delay:.1s">
-            <div class="tl-left"><div class="tl-dot"></div><div class="tl-connector"></div></div>
-            <div><div class="tl-year">Growing</div><div class="tl-desc">Expanded into motion graphics, video production and premium branding.</div></div>
-          </div>
-          <div class="tl-item reveal" style="transition-delay:.2s">
-            <div class="tl-left"><div class="tl-dot"></div></div>
-            <div><div class="tl-year">Now</div><div class="tl-desc">Premium creative studio delivering world-class visual work globally.</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="about-right">
-        <div class="stat-row">
-          <div class="stat-card reveal"><div class="stat-num">150+</div><div class="stat-label">Projects Delivered</div></div>
-          <div class="stat-card reveal" style="transition-delay:.1s"><div class="stat-num">50+</div><div class="stat-label">Happy Clients</div></div>
-          <div class="stat-card reveal" style="transition-delay:.2s"><div class="stat-num">5+</div><div class="stat-label">Years Experience</div></div>
-          <div class="stat-card reveal" style="transition-delay:.3s"><div class="stat-num">10+</div><div class="stat-label">Industries Served</div></div>
-        </div>
-        <div class="avail-card reveal" style="transition-delay:.4s">
-          <div class="avail-title"><span class="pulse"></span>Currently Available</div>
-          <div class="avail-desc">Open for brand identity, motion graphics and video projects. Let's create something extraordinary together.</div>
-          <a href="#contact" class="btn-solid" style="font-size:.78rem;padding:.7rem 1.3rem">Start a Project →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="container">
-    <div class="eyebrow">What I Do</div>
-    <h2 class="section-h2">Premium <em>creative services</em></h2>
-    <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem;margin-bottom:3rem">From concept to execution — every service delivered with obsessive attention to craft.</p>
-    <div class="services-grid">
-      <div class="service-card reveal"><span class="service-icon">◆</span><div class="service-name">Brand Identity Design</div><div class="service-desc">Complete visual identity systems that communicate your brand's essence and create lasting impressions.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.05s"><span class="service-icon">✦</span><div class="service-name">Logo Design</div><div class="service-desc">Timeless, versatile logos crafted with precision and purpose that work across every medium.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.1s"><span class="service-icon">▦</span><div class="service-name">Social Media Design</div><div class="service-desc">Scroll-stopping content templates and campaigns designed for maximum engagement.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.15s"><span class="service-icon">◎</span><div class="service-name">Motion Graphics</div><div class="service-desc">Dynamic animations and kinetic typography that bring your brand to life with cinematic quality.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.2s"><span class="service-icon">▷</span><div class="service-name">Video Editing</div><div class="service-desc">Cinematic cuts, color grading and sound design that transform raw footage into compelling stories.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.25s"><span class="service-icon">⬡</span><div class="service-name">Packaging Design</div><div class="service-desc">Premium packaging that commands shelf presence and delivers an unforgettable unboxing experience.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.3s"><span class="service-icon">⊙</span><div class="service-name">Podcast Branding</div><div class="service-desc">Complete podcast visual identity — cover art, intro animations, social kits and assets.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.35s"><span class="service-icon">▣</span><div class="service-name">YouTube Content Design</div><div class="service-desc">Channel art, thumbnail systems, lower thirds and graphics packages built for creator growth.</div><div class="service-cta">Explore →</div></div>
-      <div class="service-card reveal" style="transition-delay:.4s"><span class="service-icon">⊕</span><div class="service-name">UI Design</div><div class="service-desc">Intuitive, beautiful interfaces that balance stunning aesthetics with effortless user experience.</div><div class="service-cta">Explore →</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="container">
-    <div class="eyebrow">Featured Work</div>
-    <h2 class="section-h2">Selected <em>projects</em></h2>
-    <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem;margin-bottom:3rem">A curated selection spanning brand, motion, and design across diverse industries.</p>
-    <div class="projects-grid">
-
-      <div class="project-card tall reveal" onclick="openModal('Luxury Coffee Brand Packaging','Packaging Design','A complete luxury packaging system for an artisan coffee brand — from concept to print-ready files. Includes bag design, label systems, and retail display materials.','Client — Artisan Roasters Co.','2024','Packaging · Print · Branding')">
-        <div class="project-placeholder proj1"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Packaging Design</div>
-          <div class="project-name">Luxury Coffee Brand Packaging</div>
-          <div class="project-tags"><span class="project-tag">Packaging</span><span class="project-tag">Print</span><span class="project-tag">Branding</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Luxury Coffee Brand Packaging','Packaging Design','A complete luxury packaging system for an artisan coffee brand — from concept to print-ready files. Includes bag design, label systems, and retail display materials.','Client — Artisan Roasters Co.','2024','Packaging · Print · Branding')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.05s" onclick="openModal('Fintech App Brand Identity','Brand Identity','Full brand identity for a digital banking startup — logo system, color architecture, typography, and a 60-page brand guideline. Built to scale from app icon to billboard.','Client — Flux Banking','2024','Branding · Identity · Guidelines')">
-        <div class="project-placeholder proj2"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Brand Identity</div>
-          <div class="project-name">Fintech App Brand Identity</div>
-          <div class="project-tags"><span class="project-tag">Branding</span><span class="project-tag">Identity</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Fintech App Brand Identity','Brand Identity','Full brand identity for a digital banking startup — logo system, color architecture, typography, and a 60-page brand guideline. Built to scale from app icon to billboard.','Client — Flux Banking','2024','Branding · Identity · Guidelines')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.1s" onclick="openModal('Streetwear Capsule Collection','Apparel Design','Graphic design and print artwork for a 12-piece streetwear capsule — tees, hoodies, and accessories with a cohesive visual language rooted in urban culture.','Client — Form & Fade','2023','Apparel · Graphics · Print')">
-        <div class="project-placeholder proj3"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Apparel Design</div>
-          <div class="project-name">Streetwear Capsule Collection</div>
-          <div class="project-tags"><span class="project-tag">Apparel</span><span class="project-tag">Print</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Streetwear Capsule Collection','Apparel Design','Graphic design and print artwork for a 12-piece streetwear capsule — tees, hoodies, and accessories with a cohesive visual language rooted in urban culture.','Client — Form & Fade','2023','Apparel · Graphics · Print')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.15s" onclick="openModal('Podcast Cover Art & Branding','Podcast Branding','Cover art, episode templates, and full visual identity for a weekly interview podcast — designed to stand out across Spotify and Apple Podcasts charts.','Client — The Long Game Podcast','2024','Podcast · Cover Art · Templates')">
-        <div class="project-placeholder proj4"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Podcast Branding</div>
-          <div class="project-name">Podcast Cover Art &amp; Branding</div>
-          <div class="project-tags"><span class="project-tag">Podcast</span><span class="project-tag">Cover Art</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Podcast Cover Art & Branding','Podcast Branding','Cover art, episode templates, and full visual identity for a weekly interview podcast — designed to stand out across Spotify and Apple Podcasts charts.','Client — The Long Game Podcast','2024','Podcast · Cover Art · Templates')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card wide reveal" style="transition-delay:.2s" onclick="openModal('Cinematic Travel Reel Edit','Video Editing','A 3-minute cinematic travel film edited from 40+ hours of raw footage across 6 countries. Full color grade, sound design, and original music licensing. Featured on a 500K+ subscriber channel.','Client — Wander Films','2024','Video · Color Grade · Sound')">
-        <div class="project-placeholder proj5" style="height:100%"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Video Editing</div>
-          <div class="project-name">Cinematic Travel Reel Edit</div>
-          <div class="project-tags"><span class="project-tag">Video</span><span class="project-tag">Color Grade</span><span class="project-tag">Sound Design</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Cinematic Travel Reel Edit','Video Editing','A 3-minute cinematic travel film edited from 40+ hours of raw footage across 6 countries. Full color grade, sound design, and original music licensing. Featured on a 500K+ subscriber channel.','Client — Wander Films','2024','Video · Color Grade · Sound')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.24s" onclick="openModal('Tech Startup Motion Campaign','Motion Graphics','Full motion graphics campaign for a Series-A tech startup launch — explainer video, product demo animations, social reels, and investor deck animations.','Client — Nexus Technologies','2024','Motion · After Effects · 3D')">
-        <div class="project-placeholder proj6"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Motion Graphics</div>
-          <div class="project-name">Tech Startup Motion Campaign</div>
-          <div class="project-tags"><span class="project-tag">Motion</span><span class="project-tag">After Effects</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Tech Startup Motion Campaign','Motion Graphics','Full motion graphics campaign for a Series-A tech startup launch — explainer video, product demo animations, social reels, and investor deck animations.','Client — Nexus Technologies','2024','Motion · After Effects · 3D')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.28s" onclick="openModal('Music Album Cover Design','Art Direction','Conceptual album artwork for an independent electronic artist — full art direction, cover design, vinyl mockup, and digital release assets.','Client — Midnight Frequencies','2023','Art Direction · Illustration · Print')">
-        <div class="project-placeholder proj7"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Art Direction</div>
-          <div class="project-name">Music Album Cover Design</div>
-          <div class="project-tags"><span class="project-tag">Art Direction</span><span class="project-tag">Music</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Music Album Cover Design','Art Direction','Conceptual album artwork for an independent electronic artist — full art direction, cover design, vinyl mockup, and digital release assets.','Client — Midnight Frequencies','2023','Art Direction · Illustration · Print')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.32s" onclick="openModal('Luxury Perfume Packaging Design','Packaging Design','Ultra-premium packaging concept for a boutique fragrance house. Minimalist bottle design, bespoke box construction drawings, and unboxing experience choreography.','Client — Lumière Parfums','2024','Luxury · Packaging · 3D Render')">
-        <div class="project-placeholder proj8"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Packaging Design</div>
-          <div class="project-name">Luxury Perfume Packaging</div>
-          <div class="project-tags"><span class="project-tag">Luxury</span><span class="project-tag">3D Render</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Luxury Perfume Packaging Design','Packaging Design','Ultra-premium packaging concept for a boutique fragrance house. Minimalist bottle design, bespoke box construction drawings, and unboxing experience choreography.','Client — Lumière Parfums','2024','Luxury · Packaging · 3D Render')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.36s" onclick="openModal('YouTube Creator Brand Kit','YouTube Branding','Complete brand kit for a 500K+ YouTube creator — channel banner, profile art, 50-thumbnail template system, lower thirds, and end-screen templates in Canva and Photoshop.','Client — Rohan Verma Creator','2024','Thumbnails · Channel Art · Templates')">
-        <div class="project-placeholder proj9"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">YouTube Branding</div>
-          <div class="project-name">YouTube Creator Brand Kit</div>
-          <div class="project-tags"><span class="project-tag">Thumbnails</span><span class="project-tag">Channel Art</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('YouTube Creator Brand Kit','YouTube Branding','Complete brand kit for a 500K+ YouTube creator — channel banner, profile art, 50-thumbnail template system, lower thirds, and end-screen templates in Canva and Photoshop.','Client — Rohan Verma Creator','2024','Thumbnails · Channel Art · Templates')">Preview Project ↗</button>
-        </div>
-      </div>
-
-      <div class="project-card reveal" style="transition-delay:.4s" onclick="openModal('Instagram Marketing Campaign','Social Media Design','30-day Instagram campaign for a D2C fashion brand — 90 content pieces, reel covers, story templates, and animated ad creatives. Campaign drove 280% engagement increase.','Client — Nova Fashion','2024','Social · Campaign · Motion')">
-        <div class="project-placeholder proj10"></div>
-        <div class="project-overlay"></div>
-        <div class="project-info">
-          <div class="project-cat">Social Media</div>
-          <div class="project-name">Instagram Marketing Campaign</div>
-          <div class="project-tags"><span class="project-tag">Social</span><span class="project-tag">Campaign</span><span class="project-tag">Motion</span></div>
-          <button class="preview-btn" onclick="event.stopPropagation();openModal('Instagram Marketing Campaign','Social Media Design','30-day Instagram campaign for a D2C fashion brand — 90 content pieces, reel covers, story templates, and animated ad creatives. Campaign drove 280% engagement increase.','Client — Nova Fashion','2024','Social · Campaign · Motion')">Preview Project ↗</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- MOTION SHOWCASE -->
-<section id="motion">
-  <div class="container">
-    <div class="eyebrow">Motion &amp; Film</div>
-    <h2 class="section-h2">Motion <em>showcase</em></h2>
-    <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem">Moving images that tell stories, evoke emotion and make brands come alive.</p>
-    <div class="motion-grid">
-      <div class="motion-card reveal">
-        <div class="motion-bg" style="background:radial-gradient(circle at 50% 30%,#22203a,var(--frame) 70%)"><div class="motion-play">▶</div></div>
-        <div class="motion-label"><div class="motion-title">Brand Film Reel 2025</div><div class="motion-sub">Showreel · 3:24</div></div>
-      </div>
-      <div class="motion-card reveal" style="transition-delay:.1s">
-        <div class="motion-bg" style="background:radial-gradient(circle at 60% 40%,#2a1a30,var(--frame) 70%)"><div class="motion-play">▶</div></div>
-        <div class="motion-label"><div class="motion-title">Podcast Intro Animation</div><div class="motion-sub">Motion Graphics · 0:15</div></div>
-      </div>
-      <div class="motion-card reveal" style="transition-delay:.2s">
-        <div class="motion-bg" style="background:radial-gradient(circle at 40% 60%,#1c2a3a,var(--frame) 70%)"><div class="motion-play">▶</div></div>
-        <div class="motion-label"><div class="motion-title">Product Demo Animation</div><div class="motion-sub">3D Motion · 1:02</div></div>
-      </div>
-      <div class="motion-card reveal" style="transition-delay:.3s">
-        <div class="motion-bg" style="background:radial-gradient(circle at 50% 50%,#1c2a28,var(--frame) 70%)"><div class="motion-play">▶</div></div>
-        <div class="motion-label"><div class="motion-title">Logo Reveal Animation</div><div class="motion-sub">Motion Graphics · 0:08</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="container">
-    <div class="eyebrow">Client Words</div>
-    <h2 class="section-h2">What clients <em>say</em></h2>
-    <div class="quote-grid">
-      <div class="quote-card reveal">
-        <span class="quote-mark">"</span>
-        <p class="quote-text">Pavan didn't just deliver a logo — he delivered a complete way of thinking about our brand. Every touchpoint feels considered.</p>
-        <div class="quote-person"><div class="quote-avatar">A</div><div><div class="quote-name">Aanya Reddy</div><div class="quote-role">Founder, Flux Banking</div></div></div>
-      </div>
-      <div class="quote-card reveal" style="transition-delay:.1s">
-        <span class="quote-mark">"</span>
-        <p class="quote-text">The motion work for our launch video was the single biggest factor in our investor deck landing. Cinematic, precise, on time.</p>
-        <div class="quote-person"><div class="quote-avatar">R</div><div><div class="quote-name">Rohan Verma</div><div class="quote-role">CEO, Nexus Technologies</div></div></div>
-      </div>
-      <div class="quote-card reveal" style="transition-delay:.2s">
-        <span class="quote-mark">"</span>
-        <p class="quote-text">Our packaging now stops people on the shelf. Sales from retail partners grew the quarter after the redesign shipped.</p>
-        <div class="quote-person"><div class="quote-avatar">M</div><div><div class="quote-name">Meera Iyer</div><div class="quote-role">Co-founder, Artisan Roasters Co.</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container contact-inner">
-    <div class="eyebrow" style="justify-content:center">Get In Touch</div>
-    <h2 class="contact-h2">Let's create something <em>extraordinary</em> together.</h2>
-    <p class="contact-sub">Have a project in mind? Tell me about it — I read every message and reply within one business day.</p>
-    <div class="contact-actions">
-      <a href="mailto:hello@pavankalyan.design" class="btn-solid">Email Me →</a>
-      <a href="#" class="btn-outline">Download Resume</a>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-item"><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:hello@pavankalyan.design">hello@pavankalyan.design</a></div></div>
-      <div class="contact-item"><div class="contact-item-label">Location</div><div class="contact-item-value">Hyderabad, India</div></div>
-      <div class="contact-item"><div class="contact-item-label">Availability</div><div class="contact-item-value">Open for projects</div></div>
-    </div>
-
-    <form class="contact-form" id="contactForm">
-      <div class="form-row">
-        <div class="form-field"><label for="cName">Name</label><input class="form-input" type="text" id="cName" name="name" required></div>
-        <div class="form-field"><label for="cEmail">Email</label><input class="form-input" type="email" id="cEmail" name="email" required></div>
-      </div>
-      <div class="form-field"><label for="cProject">Project Type</label><input class="form-input" type="text" id="cProject" name="project" placeholder="Branding, motion graphics, video…"></div>
-      <div class="form-field"><label for="cMsg">Message</label><textarea class="form-textarea" id="cMsg" name="message" required></textarea></div>
-      <div>
-        <button type="submit" class="btn-solid form-submit">Send Message →</button>
-        <div class="form-note" id="formNote"></div>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <a href="#hero" class="footer-logo"><span class="dot"></span>Pavan Kalyan</a>
-        <p class="footer-tag">A premium creative studio crafting brand identity, motion and video for founders and creators.</p>
-      </div>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <div class="footer-col-title">Navigate</div>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#projects">Work</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <div class="footer-col-title">Services</div>
-          <a href="#services">Brand Identity</a>
-          <a href="#services">Motion Graphics</a>
-          <a href="#services">Video Editing</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Pavan Kalyan. All rights reserved.</div>
-      <div class="footer-social">
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">Behance</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-box" id="modalBox">
-    <div class="modal-head">
-      <div>
-        <div class="modal-cat" id="modalCat"></div>
-        <div class="modal-title" id="modalTitle"></div>
-      </div>
-      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-desc" id="modalDesc"></p>
-      <div class="modal-meta" id="modalMeta"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-(function(){
-  "use strict";
-
-  /* ===== Theme toggle ===== */
-  var root = document.documentElement;
-  var themeToggle = document.getElementById('themeToggle');
-  function applyTheme(t){
-    root.setAttribute('data-theme', t);
-    themeToggle.textContent = t === 'dark' ? '☾' : '☀';
-    try{ localStorage.setItem('pk-theme', t); }catch(e){}
-  }
-  var saved = null;
-  try{ saved = localStorage.getItem('pk-theme'); }catch(e){}
-  if(saved) applyTheme(saved);
-  themeToggle.addEventListener('click', function(){
-    var current = root.getAttribute('data-theme');
-    applyTheme(current === 'dark' ? 'light' : 'dark');
-  });
-
-  /* ===== Nav pill scroll state ===== */
-  var navPill = document.getElementById('navPill');
-  function onScroll(){
-    if(window.scrollY > 40){ navPill.style.boxShadow = 'var(--shadow2)'; }
-    else{ navPill.style.boxShadow = 'var(--shadow)'; }
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
-
-  /* ===== Mobile menu ===== */
-  var burger = document.getElementById('navBurger');
-  var links = document.querySelector('.nav-links');
-  burger.addEventListener('click', function(){
-    var isOpen = links.style.display === 'flex';
-    if(isOpen){
-      links.style.display = '';
-    } else {
-      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:5rem;left:1.3rem;right:1.3rem;background:var(--nav-bg);backdrop-filter:blur(20px);padding:1.4rem 1.6rem;gap:1.1rem;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow2);';
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, .7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s ease;
     }
-  });
-  document.querySelectorAll('.nav-links a').forEach(function(a){
-    a.addEventListener('click', function(){
-      if(window.innerWidth <= 880){ links.style.display = ''; }
-    });
-  });
 
-  /* ===== Scroll reveal ===== */
-  var revealEls = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background: var(--frame);
+      border: 1px solid var(--border2);
+      max-width: 720px;
+      width: 100%;
+      max-height: 86vh;
+      overflow-y: auto;
+      border-radius: 22px;
+      transform: translateY(24px) scale(.98);
+      transition: transform .4s cubic-bezier(.16, 1, .3, 1);
+      box-shadow: var(--shadow2);
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 2rem 2rem 1.3rem;
+      gap: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-cat {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: .6rem;
+    }
+
+    .modal-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+    }
+
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border2);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      color: var(--text2);
+      transition: all .3s ease;
+    }
+
+    .modal-close:hover {
+      border-color: var(--accent);
+      color: var(--accent2);
+      transform: rotate(90deg);
+    }
+
+    .modal-body {
+      padding: 1.7rem 2rem 2.2rem;
+    }
+
+    .modal-desc {
+      font-size: .92rem;
+      line-height: 1.85;
+      color: var(--text2);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-meta {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding-top: 1.3rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .modal-meta-label {
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--text3);
+      margin-bottom: .4rem;
+    }
+
+    .modal-meta-value {
+      font-size: .86rem;
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+    }
+  </style>
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-pill" id="navPill">
+      <a href="#hero" class="nav-logo"><span class="dot"></span>Pavan Kalyan</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#motion">Motion</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme"
+          aria-label="Toggle light and dark theme">☀</button>
+        <a href="#contact" class="nav-cta">Start a Project</a>
+        <button class="nav-burger" id="navBurger"
+          aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-top">
+      <div class="hero-eyebrow"><span class="dot"></span>Available for new projects</div>
+      <h1 class="hero-h1">Crafting visual experiences <em>people remember.</em></h1>
+      <p class="hero-sub">Brand identity, motion graphics and video craft for founders and creators who want to stand
+        out — not blend in.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-solid">View Projects →</a>
+        <a href="#contact" class="btn-outline">Let's Collaborate</a>
+      </div>
+    </div>
+
+
+
+
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Brand Identity</span><span class="marquee-item">Motion Graphics</span><span
+        class="marquee-item">Video Editing</span><span class="marquee-item">Logo Design</span><span
+        class="marquee-item">Packaging Design</span><span class="marquee-item">Social Media</span><span
+        class="marquee-item">UI Design</span><span class="marquee-item">Podcast Branding</span><span
+        class="marquee-item">YouTube Content</span><span class="marquee-item">Marketing Creatives</span>
+      <span class="marquee-item">Brand Identity</span><span class="marquee-item">Motion Graphics</span><span
+        class="marquee-item">Video Editing</span><span class="marquee-item">Logo Design</span><span
+        class="marquee-item">Packaging Design</span><span class="marquee-item">Social Media</span><span
+        class="marquee-item">UI Design</span><span class="marquee-item">Podcast Branding</span><span
+        class="marquee-item">YouTube Content</span><span class="marquee-item">Marketing Creatives</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="eyebrow">Creative Manifesto</div>
+      <div class="about-grid">
+        <div class="manifesto-block">
+          <div class="manifesto-line">I don't just design visuals.</div>
+          <div class="manifesto-line">I build <em>experiences.</em></div>
+          <div class="manifesto-line muted">Every frame, every color, every motion — crafted to capture attention and
+            create impact.</div>
+          <div class="about-divider"></div>
+          <div class="about-para">I exist at the intersection of aesthetics and strategy — where art meets business and
+            creativity drives results. Every project I take on is an opportunity to tell a story that resonates, a
+            visual system that endures.</div>
+          <div class="about-timeline">
+            <div class="tl-item reveal">
+              <div class="tl-left">
+                <div class="tl-dot"></div>
+                <div class="tl-connector"></div>
+              </div>
+              <div>
+                <div class="tl-year">The Beginning</div>
+                <div class="tl-desc">Started crafting visual stories for brands and creators worldwide.</div>
+              </div>
+            </div>
+            <div class="tl-item reveal" style="transition-delay:.1s">
+              <div class="tl-left">
+                <div class="tl-dot"></div>
+                <div class="tl-connector"></div>
+              </div>
+              <div>
+                <div class="tl-year">Growing</div>
+                <div class="tl-desc">Expanded into motion graphics, video production and premium branding.</div>
+              </div>
+            </div>
+            <div class="tl-item reveal" style="transition-delay:.2s">
+              <div class="tl-left">
+                <div class="tl-dot"></div>
+              </div>
+              <div>
+                <div class="tl-year">Now</div>
+                <div class="tl-desc">Premium creative studio delivering world-class visual work globally.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="stat-row">
+            <div class="stat-card reveal">
+              <div class="stat-num">150+</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:.1s">
+              <div class="stat-num">50+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:.2s">
+              <div class="stat-num">5+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card reveal" style="transition-delay:.3s">
+              <div class="stat-num">10+</div>
+              <div class="stat-label">Industries Served</div>
+            </div>
+          </div>
+          <div class="avail-card reveal" style="transition-delay:.4s">
+            <div class="avail-title"><span class="pulse"></span>Currently Available</div>
+            <div class="avail-desc">Open for brand identity, motion graphics and video projects. Let's create something
+              extraordinary together.</div>
+            <a href="#contact" class="btn-solid" style="font-size:.78rem;padding:.7rem 1.3rem">Start a Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="eyebrow">What I Do</div>
+      <h2 class="section-h2">Premium <em>creative services</em></h2>
+      <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem;margin-bottom:3rem">From concept to
+        execution — every service delivered with obsessive attention to craft.</p>
+      <div class="services-grid">
+        <div class="service-card reveal"><span class="service-icon">◆</span>
+          <div class="service-name">Brand Identity Design</div>
+          <div class="service-desc">Complete visual identity systems that communicate your brand's essence and create
+            lasting impressions.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.05s"><span class="service-icon">✦</span>
+          <div class="service-name">Logo Design</div>
+          <div class="service-desc">Timeless, versatile logos crafted with precision and purpose that work across every
+            medium.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.1s"><span class="service-icon">▦</span>
+          <div class="service-name">Social Media Design</div>
+          <div class="service-desc">Scroll-stopping content templates and campaigns designed for maximum engagement.
+          </div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.15s"><span class="service-icon">◎</span>
+          <div class="service-name">Motion Graphics</div>
+          <div class="service-desc">Dynamic animations and kinetic typography that bring your brand to life with
+            cinematic quality.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.2s"><span class="service-icon">▷</span>
+          <div class="service-name">Video Editing</div>
+          <div class="service-desc">Cinematic cuts, color grading and sound design that transform raw footage into
+            compelling stories.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.25s"><span class="service-icon">⬡</span>
+          <div class="service-name">Packaging Design</div>
+          <div class="service-desc">Premium packaging that commands shelf presence and delivers an unforgettable
+            unboxing experience.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.3s"><span class="service-icon">⊙</span>
+          <div class="service-name">Podcast Branding</div>
+          <div class="service-desc">Complete podcast visual identity — cover art, intro animations, social kits and
+            assets.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.35s"><span class="service-icon">▣</span>
+          <div class="service-name">YouTube Content Design</div>
+          <div class="service-desc">Channel art, thumbnail systems, lower thirds and graphics packages built for creator
+            growth.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+        <div class="service-card reveal" style="transition-delay:.4s"><span class="service-icon">⊕</span>
+          <div class="service-name">UI Design</div>
+          <div class="service-desc">Intuitive, beautiful interfaces that balance stunning aesthetics with effortless
+            user experience.</div>
+          <div class="service-cta">Explore →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="eyebrow">Featured Work</div>
+      <h2 class="section-h2">Selected <em>projects</em></h2>
+      <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem;margin-bottom:3rem">A curated
+        selection spanning brand, motion, and design across diverse industries.</p>
+      <div class="projects-grid">
+
+        <div class="project-card tall reveal"
+          onclick="openModal('Energy Drink Packaging Design','Packaging Design','Complete packaging design system for Beast Energy — black aluminum cans with lime green accents and bold typography. Includes can design, label systems, and 360-degree brand application across product lineup.','Client — Beast Energy','2026','Packaging · Can Design · Branding','./Energy Drink.png')">
+          <div class="project-placeholder" style="background-image: url('./Energy Drink.png'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: blur(4px);"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Packaging Design</div>
+            <div class="project-name">Energy Drink Packaging Design</div>
+            <div class="project-tags"><span class="project-tag">Packaging</span><span
+                class="project-tag">Can Design</span><span class="project-tag">Branding</span></div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Energy Drink Packaging Design','Packaging Design','Complete packaging design system for Beast Energy — black aluminum cans with lime green accents and bold typography. Includes can design, label systems, and 360-degree brand application across product lineup.','Client — Beast Energy','2026','Packaging · Can Design · Branding','./Energy Drink.png')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:.05s"
+          onclick="openModal('Noxa Street Logo','Logo Design','Complete brand identity system for Noxa Street — logo variations, color palette, typography guidelines, and comprehensive branding assets. Rule nothing. Create everything.','Client — Noxa','2026','Logo · Branding · Guidelines','./Noxa Street Logo.png')">
+          <div class="project-placeholder" style="background-image: url('./Noxa Street Logo.png'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: blur(4px);"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Logo Design</div>
+            <div class="project-name">Noxa Street Logo</div>
+            <div class="project-tags"><span class="project-tag">Logo</span><span class="project-tag">Branding</span>
+            </div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Noxa Street Logo','Logo Design','Complete brand identity system for Noxa Street — logo variations, color palette, typography guidelines, and comprehensive branding assets. Rule nothing. Create everything.','Client — Noxa','2026','Logo · Branding · Guidelines','./Noxa Street Logo.png')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+
+        <div class="project-card reveal" style="transition-delay:.15s"
+          onclick="openModal('Podcast Cover Art & Branding','Podcast Branding','Cover art, episode templates, and full visual identity for a weekly interview podcast — designed to stand out across Spotify and Apple Podcasts charts.','Client — The Long Game Podcast','2024','Podcast · Cover Art · Templates','./Podcast Visual Identity.png')">
+          <div class="project-placeholder" style="background-image: url('./Podcast Visual Identity.png'); background-size: cover; background-position: center; background-repeat: no-repeat; filter: blur(4px);"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Podcast Branding</div>
+            <div class="project-name">Podcast Cover Art &amp; Branding</div>
+            <div class="project-tags"><span class="project-tag">Podcast</span><span class="project-tag">Cover Art</span>
+            </div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Podcast Cover Art & Branding','Podcast Branding','Cover art, episode templates, and full visual identity for a weekly interview podcast — designed to stand out across Spotify and Apple Podcasts charts.','Client — The Long Game Podcast','2024','Podcast · Cover Art · Templates','./Podcast Visual Identity.png')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+        <div class="project-card wide reveal" style="transition-delay:.2s"
+          onclick="openModal('Cinematic Travel Reel Edit','Video Editing','A 3-minute cinematic travel film edited from 40+ hours of raw footage across 6 countries. Full color grade, sound design, and original music licensing. Featured on a 500K+ subscriber channel.','Client — Wander Films','2024','Video · Color Grade · Sound')">
+          <div class="project-placeholder proj5" style="height:100%"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Video Editing</div>
+            <div class="project-name">Cinematic Travel Reel Edit</div>
+            <div class="project-tags"><span class="project-tag">Video</span><span class="project-tag">Color
+                Grade</span><span class="project-tag">Sound Design</span></div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Cinematic Travel Reel Edit','Video Editing','A 3-minute cinematic travel film edited from 40+ hours of raw footage across 6 countries. Full color grade, sound design, and original music licensing. Featured on a 500K+ subscriber channel.','Client — Wander Films','2024','Video · Color Grade · Sound')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:.24s"
+          onclick="openModal('Tech Startup Motion Campaign','Motion Graphics','Full motion graphics campaign for a Series-A tech startup launch — explainer video, product demo animations, social reels, and investor deck animations.','Client — Nexus Technologies','2024','Motion · After Effects · 3D')">
+          <div class="project-placeholder proj6"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Motion Graphics</div>
+            <div class="project-name">Tech Startup Motion Campaign</div>
+            <div class="project-tags"><span class="project-tag">Motion</span><span class="project-tag">After
+                Effects</span></div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Tech Startup Motion Campaign','Motion Graphics','Full motion graphics campaign for a Series-A tech startup launch — explainer video, product demo animations, social reels, and investor deck animations.','Client — Nexus Technologies','2024','Motion · After Effects · 3D')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:.28s"
+          onclick="openModal('Music Album Cover Design','Art Direction','Conceptual album artwork for an independent electronic artist — full art direction, cover design, vinyl mockup, and digital release assets.','Client — Midnight Frequencies','2023','Art Direction · Illustration · Print')">
+          <div class="project-placeholder proj7"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Art Direction</div>
+            <div class="project-name">Music Album Cover Design</div>
+            <div class="project-tags"><span class="project-tag">Art Direction</span><span
+                class="project-tag">Music</span></div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Music Album Cover Design','Art Direction','Conceptual album artwork for an independent electronic artist — full art direction, cover design, vinyl mockup, and digital release assets.','Client — Midnight Frequencies','2023','Art Direction · Illustration · Print')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+
+        <div class="project-card reveal" style="transition-delay:.36s"
+          onclick="openModal('YouTube Creator Brand Kit','YouTube Branding','Complete brand kit for a 500K+ YouTube creator — channel banner, profile art, 50-thumbnail template system, lower thirds, and end-screen templates in Canva and Photoshop.','Client — Rohan Verma Creator','2024','Thumbnails · Channel Art · Templates')">
+          <div class="project-placeholder proj9"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">YouTube Branding</div>
+            <div class="project-name">YouTube Creator Brand Kit</div>
+            <div class="project-tags"><span class="project-tag">Thumbnails</span><span class="project-tag">Channel
+                Art</span></div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('YouTube Creator Brand Kit','YouTube Branding','Complete brand kit for a 500K+ YouTube creator — channel banner, profile art, 50-thumbnail template system, lower thirds, and end-screen templates in Canva and Photoshop.','Client — Rohan Verma Creator','2024','Thumbnails · Channel Art · Templates')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay:.4s"
+          onclick="openModal('Instagram Marketing Campaign','Social Media Design','30-day Instagram campaign for a D2C fashion brand — 90 content pieces, reel covers, story templates, and animated ad creatives. Campaign drove 280% engagement increase.','Client — Nova Fashion','2024','Social · Campaign · Motion')">
+          <div class="project-placeholder proj10"></div>
+          <div class="project-overlay"></div>
+          <div class="project-info">
+            <div class="project-cat">Social Media</div>
+            <div class="project-name">Instagram Marketing Campaign</div>
+            <div class="project-tags"><span class="project-tag">Social</span><span
+                class="project-tag">Campaign</span><span class="project-tag">Motion</span></div>
+            <button class="preview-btn"
+              onclick="event.stopPropagation();openModal('Instagram Marketing Campaign','Social Media Design','30-day Instagram campaign for a D2C fashion brand — 90 content pieces, reel covers, story templates, and animated ad creatives. Campaign drove 280% engagement increase.','Client — Nova Fashion','2024','Social · Campaign · Motion')">Preview
+              Project ↗</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTION SHOWCASE -->
+  <section id="motion">
+    <div class="container">
+      <div class="eyebrow">Motion &amp; Film</div>
+      <h2 class="section-h2">Motion <em>showcase</em></h2>
+      <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem">Moving images that tell stories,
+        evoke emotion and make brands come alive.</p>
+      <div class="motion-grid">
+        <div class="motion-card reveal">
+          <div class="motion-bg" style="background:radial-gradient(circle at 50% 30%,#22203a,var(--frame) 70%)">
+            <div class="motion-play">▶</div>
+          </div>
+          <div class="motion-label">
+            <div class="motion-title">Brand Film Reel 2025</div>
+            <div class="motion-sub">Showreel · 3:24</div>
+          </div>
+        </div>
+        <div class="motion-card reveal" style="transition-delay:.1s">
+          <div class="motion-bg" style="background:radial-gradient(circle at 60% 40%,#2a1a30,var(--frame) 70%)">
+            <div class="motion-play">▶</div>
+          </div>
+          <div class="motion-label">
+            <div class="motion-title">Podcast Intro Animation</div>
+            <div class="motion-sub">Motion Graphics · 0:15</div>
+          </div>
+        </div>
+        <div class="motion-card reveal" style="transition-delay:.2s">
+          <div class="motion-bg" style="background:radial-gradient(circle at 40% 60%,#1c2a3a,var(--frame) 70%)">
+            <div class="motion-play">▶</div>
+          </div>
+          <div class="motion-label">
+            <div class="motion-title">Product Demo Animation</div>
+            <div class="motion-sub">3D Motion · 1:02</div>
+          </div>
+        </div>
+        <div class="motion-card reveal" style="transition-delay:.3s">
+          <div class="motion-bg" style="background:radial-gradient(circle at 50% 50%,#1c2a28,var(--frame) 70%)">
+            <div class="motion-play">▶</div>
+          </div>
+          <div class="motion-label">
+            <div class="motion-title">Logo Reveal Animation</div>
+            <div class="motion-sub">Motion Graphics · 0:08</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="eyebrow">Client Words</div>
+      <h2 class="section-h2">What clients <em>say</em></h2>
+      <div class="quote-grid">
+        <div class="quote-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">Pavan didn't just deliver a logo — he delivered a complete way of thinking about our
+            brand. Every touchpoint feels considered.</p>
+          <div class="quote-person">
+            <div class="quote-avatar">A</div>
+            <div>
+              <div class="quote-name">Aanya Reddy</div>
+              <div class="quote-role">Founder, Flux Banking</div>
+            </div>
+          </div>
+        </div>
+        <div class="quote-card reveal" style="transition-delay:.1s">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">The motion work for our launch video was the single biggest factor in our investor deck
+            landing. Cinematic, precise, on time.</p>
+          <div class="quote-person">
+            <div class="quote-avatar">R</div>
+            <div>
+              <div class="quote-name">Rohan Verma</div>
+              <div class="quote-role">CEO, Nexus Technologies</div>
+            </div>
+          </div>
+        </div>
+        <div class="quote-card reveal" style="transition-delay:.2s">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">Our packaging now stops people on the shelf. Sales from retail partners grew the quarter
+            after the redesign shipped.</p>
+          <div class="quote-person">
+            <div class="quote-avatar">M</div>
+            <div>
+              <div class="quote-name">Meera Iyer</div>
+              <div class="quote-role">Co-founder, Artisan Roasters Co.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact-inner">
+      <div class="eyebrow" style="justify-content:center">Get In Touch</div>
+      <h2 class="contact-h2">Let's create something <em>extraordinary</em> together.</h2>
+      <p class="contact-sub">Have a project in mind? Tell me about it — I read every message and reply within one
+        business day.</p>
+      <div class="contact-actions">
+        <a href="mailto:hello@pavankalyan.design" class="btn-solid">Email Me →</a>
+        <a href="#" class="btn-outline">Download Resume</a>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value"><a href="mailto:hello@pavankalyan.design">hello@pavankalyan.design</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Location</div>
+          <div class="contact-item-value">Hyderabad, India</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-label">Availability</div>
+          <div class="contact-item-value">Open for projects</div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field"><label for="cName">Name</label><input class="form-input" type="text" id="cName"
+              name="name" required></div>
+          <div class="form-field"><label for="cEmail">Email</label><input class="form-input" type="email" id="cEmail"
+              name="email" required></div>
+        </div>
+        <div class="form-field"><label for="cProject">Project Type</label><input class="form-input" type="text"
+            id="cProject" name="project" placeholder="Branding, motion graphics, video…"></div>
+        <div class="form-field"><label for="cMsg">Message</label><textarea class="form-textarea" id="cMsg"
+            name="message" required></textarea></div>
+        <div>
+          <button type="submit" class="btn-solid form-submit">Send Message →</button>
+          <div class="form-note" id="formNote"></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#hero" class="footer-logo"><span class="dot"></span>Pavan Kalyan</a>
+          <p class="footer-tag">A premium creative studio crafting brand identity, motion and video for founders and
+            creators.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <div class="footer-col-title">Navigate</div>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Work</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">Services</div>
+            <a href="#services">Brand Identity</a>
+            <a href="#services">Motion Graphics</a>
+            <a href="#services">Video Editing</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Pavan Kalyan. All rights reserved.</div>
+        <div class="footer-social">
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" target="_blank" rel="noopener">Behance</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box" id="modalBox">
+      <div class="modal-head">
+        <div>
+          <div class="modal-cat" id="modalCat"></div>
+          <div class="modal-title" id="modalTitle"></div>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-image" id="modalImage"></div>
+      <div class="modal-body">
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* ===== Theme toggle ===== */
+      var root = document.documentElement;
+      var themeToggle = document.getElementById('themeToggle');
+      function applyTheme(t) {
+        root.setAttribute('data-theme', t);
+        themeToggle.textContent = t === 'dark' ? '☾' : '☀';
+        try { localStorage.setItem('pk-theme', t); } catch (e) { }
+      }
+      var saved = null;
+      try { saved = localStorage.getItem('pk-theme'); } catch (e) { }
+      if (saved) applyTheme(saved);
+      themeToggle.addEventListener('click', function () {
+        var current = root.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
+      });
+
+      /* ===== Nav pill scroll state ===== */
+      var navPill = document.getElementById('navPill');
+      function onScroll() {
+        if (window.scrollY > 40) { navPill.style.boxShadow = 'var(--shadow2)'; }
+        else { navPill.style.boxShadow = 'var(--shadow)'; }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ===== Mobile menu ===== */
+      var burger = document.getElementById('navBurger');
+      var links = document.querySelector('.nav-links');
+      burger.addEventListener('click', function () {
+        var isOpen = links.style.display === 'flex';
+        if (isOpen) {
+          links.style.display = '';
+        } else {
+          links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:5rem;left:1.3rem;right:1.3rem;background:var(--nav-bg);backdrop-filter:blur(20px);padding:1.4rem 1.6rem;gap:1.1rem;border-radius:20px;border:1px solid var(--border);box-shadow:var(--shadow2);';
         }
       });
-    }, { threshold:.15, rootMargin:'0px 0px -40px 0px' });
-    revealEls.forEach(function(el){ io.observe(el); });
-  } else {
-    revealEls.forEach(function(el){ el.classList.add('in'); });
-  }
+      document.querySelectorAll('.nav-links a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.innerWidth <= 880) { links.style.display = ''; }
+        });
+      });
 
-  /* ===== Custom cursor ===== */
-  var cursor = document.getElementById('cursor');
-  var ring = document.getElementById('cursorRing');
-  var mx=0,my=0,rx=0,ry=0;
-  window.addEventListener('mousemove', function(e){
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx+'px'; cursor.style.top = my+'px';
-  });
-  (function loop(){
-    rx += (mx-rx)*.18; ry += (my-ry)*.18;
-    ring.style.left = rx+'px'; ring.style.top = ry+'px';
-    requestAnimationFrame(loop);
-  })();
-  document.querySelectorAll('a, button, .project-card, .motion-card').forEach(function(el){
-    el.addEventListener('mouseenter', function(){ ring.classList.add('frame'); });
-    el.addEventListener('mouseleave', function(){ ring.classList.remove('frame'); });
-  });
+      /* ===== Scroll reveal ===== */
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in'); });
+      }
 
-  /* ===== Modal ===== */
-  var overlay = document.getElementById('modalOverlay');
-  var modalCat = document.getElementById('modalCat');
-  var modalTitle = document.getElementById('modalTitle');
-  var modalDesc = document.getElementById('modalDesc');
-  var modalMeta = document.getElementById('modalMeta');
-  var modalClose = document.getElementById('modalClose');
-  var lastFocused = null;
+      /* ===== Custom cursor ===== */
+      var cursor = document.getElementById('cursor');
+      var ring = document.getElementById('cursorRing');
+      var mx = 0, my = 0, rx = 0, ry = 0;
+      window.addEventListener('mousemove', function (e) {
+        mx = e.clientX; my = e.clientY;
+        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+      });
+      (function loop() {
+        rx += (mx - rx) * .18; ry += (my - ry) * .18;
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+        requestAnimationFrame(loop);
+      })();
+      document.querySelectorAll('a, button, .project-card, .motion-card').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { ring.classList.add('frame'); });
+        el.addEventListener('mouseleave', function () { ring.classList.remove('frame'); });
+      });
 
-  window.openModal = function(title, cat, desc, client, year, tags){
-    modalCat.textContent = cat;
-    modalTitle.textContent = title;
-    modalDesc.textContent = desc;
-    modalMeta.innerHTML =
-      '<div><div class="modal-meta-label">Client</div><div class="modal-meta-value">'+client+'</div></div>'+
-      '<div><div class="modal-meta-label">Year</div><div class="modal-meta-value">'+year+'</div></div>'+
-      '<div><div class="modal-meta-label">Disciplines</div><div class="modal-meta-value">'+tags+'</div></div>';
-    lastFocused = document.activeElement;
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    modalClose.focus();
-  };
-  function closeModalFn(){
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-    if(lastFocused) lastFocused.focus();
-  }
-  overlay.addEventListener('click', function(e){
-    if(e.target === overlay) closeModalFn();
-  });
-  modalClose.addEventListener('click', closeModalFn);
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && overlay.classList.contains('open')) closeModalFn();
-  });
+      /* ===== Modal ===== */
+      var overlay = document.getElementById('modalOverlay');
+      var modalCat = document.getElementById('modalCat');
+      var modalTitle = document.getElementById('modalTitle');
+      var modalDesc = document.getElementById('modalDesc');
+      var modalMeta = document.getElementById('modalMeta');
+      var modalImage = document.getElementById('modalImage');
+      var modalClose = document.getElementById('modalClose');
+      var lastFocused = null;
 
-  /* ===== Contact form (front-end only) ===== */
-  var form = document.getElementById('contactForm');
-  var note = document.getElementById('formNote');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    note.textContent = 'Thanks — your message is ready to send. Connect a backend or mailto link to deliver it.';
-    form.reset();
-  });
+      window.openModal = function (title, cat, desc, client, year, tags, image) {
+        modalCat.textContent = cat;
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modalMeta.innerHTML =
+          '<div><div class="modal-meta-label">Client</div><div class="modal-meta-value">' + client + '</div></div>' +
+          '<div><div class="modal-meta-label">Year</div><div class="modal-meta-value">' + year + '</div></div>' +
+          '<div><div class="modal-meta-label">Disciplines</div><div class="modal-meta-value">' + tags + '</div></div>';
+        if (image) {
+          modalImage.innerHTML = '<img src="' + image + '" style="width:100%;height:auto;border-radius:12px;" />';
+          modalImage.style.display = 'block';
+        } else {
+          modalImage.innerHTML = '';
+          modalImage.style.display = 'none';
+        }
+        lastFocused = document.activeElement;
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        modalClose.focus();
+      };
+      function closeModalFn() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+      }
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModalFn();
+      });
+      modalClose.addEventListener('click', closeModalFn);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeModalFn();
+      });
 
-})();
-</script>
+      /* ===== Contact form (front-end only) ===== */
+      var form = document.getElementById('contactForm');
+      var note = document.getElementById('formNote');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        note.textContent = 'Thanks — your message is ready to send. Connect a backend or mailto link to deliver it.';
+        form.reset();
+      });
+
+    })();
+  </script>
 </body>
+
 </html>
