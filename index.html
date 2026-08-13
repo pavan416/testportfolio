@@ -1192,26 +1192,59 @@
     }
 
     .motion-play {
-      width: 44px;
-      height: 44px;
+      width: clamp(40px, 8vw, 56px);
+      height: clamp(40px, 8vw, 56px);
       border-radius: 50%;
-      background: rgba(255, 255, 255, .08);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--border2);
+      background: rgba(255, 255, 255, .12);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 255, 255, .25);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: .72rem;
+      cursor: pointer;
       transition: all .35s cubic-bezier(.16, 1, .3, 1);
       position: relative;
       z-index: 2;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .2);
+      font-size: 0;
+    }
+
+    .motion-play svg {
+      width: 50%;
+      height: 50%;
+      fill: currentColor;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .3));
     }
 
     .motion-card:hover .motion-play {
       background: var(--accent);
       border-color: var(--accent);
-      transform: scale(1.1);
+      transform: scale(1.12);
+      box-shadow: 0 12px 32px var(--accent-glow);
+    }
+
+    .motion-card:active .motion-play {
+      transform: scale(1.05);
+    }
+
+    .motion-play:focus-visible {
+      outline: 2px solid rgba(110, 107, 255, .6);
+      outline-offset: 3px;
+    }
+
+    @media(max-width:768px) {
+      .motion-play {
+        width: clamp(36px, 10vw, 48px);
+        height: clamp(36px, 10vw, 48px);
+      }
+    }
+
+    @media(max-width:480px) {
+      .motion-play {
+        width: 44px;
+        height: 44px;
+      }
     }
 
     .motion-label {
@@ -1733,52 +1766,116 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 60px;
-      background: linear-gradient(to top, rgba(0, 0, 0, .7) 0%, transparent 100%);
+      height: clamp(50px, 8vh, 70px);
+      background: linear-gradient(to top, rgba(0, 0, 0, .75) 0%, rgba(0, 0, 0, .3) 60%, transparent 100%);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 1.2rem;
+      padding: 0 clamp(0.8rem, 2vw, 1.5rem);
       z-index: 10;
       opacity: 0;
       transition: opacity .3s ease;
+      gap: clamp(0.8rem, 2vw, 1.2rem);
     }
 
-    .video-player-wrapper:hover .video-player-controls {
+    .video-player-wrapper:hover .video-player-controls,
+    .video-player-wrapper:focus-within .video-player-controls {
       opacity: 1;
+    }
+
+    @media(hover:none), (pointer:coarse) {
+      .video-player-controls {
+        opacity: 1;
+      }
     }
 
     .video-controls-left {
       display: flex;
       align-items: center;
-      gap: .8rem;
+      gap: clamp(0.6rem, 1.5vw, 1rem);
     }
 
     .video-control-btn {
-      width: 36px;
-      height: 36px;
+      width: clamp(40px, 6vw, 48px);
+      height: clamp(40px, 6vw, 48px);
       border-radius: 50%;
-      background: rgba(255, 255, 255, .15);
-      border: 1px solid rgba(255, 255, 255, .25);
+      background: rgba(255, 255, 255, .12);
+      border: 1.5px solid rgba(255, 255, 255, .25);
       color: #fff;
-      font-size: .9rem;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all .25s ease;
+      transition: all .28s cubic-bezier(.16, 1, .3, 1);
+      font-size: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-control-btn svg {
+      width: 50%;
+      height: 50%;
+      fill: currentColor;
     }
 
     .video-control-btn:hover {
-      background: rgba(255, 255, 255, .25);
-      border-color: rgba(255, 255, 255, .4);
-      transform: scale(1.08);
+      background: rgba(255, 255, 255, .22);
+      border-color: rgba(255, 255, 255, .45);
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(255, 255, 255, .15);
+    }
+
+    .video-control-btn:active {
+      transform: scale(0.95);
+    }
+
+    .video-control-btn:focus-visible {
+      outline: 2px solid rgba(110, 107, 255, .6);
+      outline-offset: 2px;
+    }
+
+    .video-control-btn.playing {
+      background: rgba(255, 255, 255, .15);
+    }
+
+    /* Touch-friendly sizing */
+    @media(hover:none), (pointer:coarse) {
+      .video-control-btn {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+      }
+
+      .motion-play {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+      }
+    }
+
+    @media(max-width:768px) {
+      .video-control-btn {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .video-control-btn {
+        width: 48px;
+        height: 48px;
+      }
     }
 
     .video-time {
       color: rgba(255, 255, 255, .8);
-      font-size: .75rem;
+      font-size: clamp(0.65rem, 1.5vw, 0.85rem);
       font-family: 'Inter', monospace;
+      white-space: nowrap;
     }
 
     .video-title {
@@ -2175,7 +2272,7 @@
       <div class="motion-grid">
         <div class="motion-card reveal" onclick="openVideoPlayer('Brand Film Reel 2025', './Skubiq Video.mp4')">
           <div class="motion-bg" style="background:radial-gradient(circle at 50% 30%,#22203a,var(--frame) 70%)">
-            <div class="motion-play">▶</div>
+            <div class="motion-play"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="motion-label">
             <div class="motion-title">Brand Film Reel 2025</div>
@@ -2184,7 +2281,7 @@
         </div>
         <div class="motion-card reveal" style="transition-delay:.1s" onclick="openVideoPlayer('Podcast Intro', './Vampire Vfx.mp4')">
           <div class="motion-bg" style="background:radial-gradient(circle at 60% 40%,#2a1a30,var(--frame) 70%)">
-            <div class="motion-play">▶</div>
+            <div class="motion-play"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="motion-label">
             <div class="motion-title">Podcast Intro Animation</div>
@@ -2193,7 +2290,7 @@
         </div>
         <div class="motion-card reveal" style="transition-delay:.2s">
           <div class="motion-bg" style="background:radial-gradient(circle at 40% 60%,#1c2a3a,var(--frame) 70%)">
-            <div class="motion-play">▶</div>
+            <div class="motion-play"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="motion-label">
             <div class="motion-title">Product Demo Animation</div>
@@ -2202,7 +2299,7 @@
         </div>
         <div class="motion-card reveal" style="transition-delay:.3s">
           <div class="motion-bg" style="background:radial-gradient(circle at 50% 50%,#1c2a28,var(--frame) 70%)">
-            <div class="motion-play">▶</div>
+            <div class="motion-play"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="motion-label">
             <div class="motion-title">Logo Reveal Animation</div>
@@ -2367,7 +2464,7 @@
         <video id="videoElement" preload="metadata"></video>
         <div class="video-player-controls">
           <div class="video-controls-left">
-            <button class="video-control-btn" id="videoPlayBtn" title="Play/Pause">▶</button>
+            <button class="video-control-btn" id="videoPlayBtn" title="Play/Pause" aria-label="Play or pause video"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path class="play-icon" d="M8 5v14l11-7z"/><path class="pause-icon" style="display:none" d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg></button>
             <div class="video-time">
               <span id="videoCurrentTime">0:00</span> / <span id="videoDuration">0:00</span>
             </div>
@@ -2527,11 +2624,25 @@
         return mins + ':' + (secs < 10 ? '0' : '') + secs;
       }
 
+      function updatePlayPauseIcon() {
+        var playIcon = videoPlayBtn.querySelector('.play-icon');
+        var pauseIcon = videoPlayBtn.querySelector('.pause-icon');
+        if (isPlaying) {
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'block';
+          videoPlayBtn.classList.add('playing');
+        } else {
+          playIcon.style.display = 'block';
+          pauseIcon.style.display = 'none';
+          videoPlayBtn.classList.remove('playing');
+        }
+      }
+
       window.openVideoPlayer = function (title, videoSrc) {
         videoTitle.textContent = title;
         videoElement.src = videoSrc;
         isPlaying = false;
-        videoPlayBtn.textContent = '▶';
+        updatePlayPauseIcon();
         videoCurrentTime.textContent = '0:00';
         videoDuration.textContent = '0:00';
         lastVideoFocused = document.activeElement;
@@ -2545,7 +2656,7 @@
         document.body.style.overflow = '';
         videoElement.pause();
         isPlaying = false;
-        videoPlayBtn.textContent = '▶';
+        updatePlayPauseIcon();
         if (lastVideoFocused) lastVideoFocused.focus();
       }
 
@@ -2554,13 +2665,12 @@
         e.stopPropagation();
         if (isPlaying) {
           videoElement.pause();
-          videoPlayBtn.textContent = '▶';
           isPlaying = false;
         } else {
           videoElement.play();
-          videoPlayBtn.textContent = '⏸';
           isPlaying = true;
         }
+        updatePlayPauseIcon();
       });
 
       // Close button
@@ -2589,8 +2699,8 @@
 
       // Auto-update button when video ends
       videoElement.addEventListener('ended', function () {
-        videoPlayBtn.textContent = '▶';
         isPlaying = false;
+        updatePlayPauseIcon();
       });
 
     })();
