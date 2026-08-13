@@ -1673,6 +1673,151 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 600;
     }
+
+    /* ============================================================
+   VIDEO PLAYER MODAL
+============================================================ */
+    .video-player-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 600;
+      background: rgba(0, 0, 0, .85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .35s ease;
+    }
+
+    .video-player-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .video-player-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      background: var(--frame);
+      border-radius: 22px;
+      border: 1px solid var(--border2);
+      overflow: hidden;
+      box-shadow: var(--shadow2);
+      transform: scale(.95);
+      transition: transform .35s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .video-player-overlay.open .video-player-container {
+      transform: scale(1);
+    }
+
+    .video-player-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .video-player-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .video-player-controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(0, 0, 0, .7) 0%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.2rem;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .video-player-wrapper:hover .video-player-controls {
+      opacity: 1;
+    }
+
+    .video-controls-left {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+
+    .video-control-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .15);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      font-size: .9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .25s ease;
+    }
+
+    .video-control-btn:hover {
+      background: rgba(255, 255, 255, .25);
+      border-color: rgba(255, 255, 255, .4);
+      transform: scale(1.08);
+    }
+
+    .video-time {
+      color: rgba(255, 255, 255, .8);
+      font-size: .75rem;
+      font-family: 'Inter', monospace;
+    }
+
+    .video-title {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      right: 3rem;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      z-index: 5;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+    }
+
+    .video-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .25s ease;
+    }
+
+    .video-close-btn:hover {
+      background: rgba(255, 255, 255, .2);
+      border-color: rgba(255, 255, 255, .4);
+      transform: rotate(90deg);
+    }
   </style>
   <noscript>
     <style>
@@ -2028,7 +2173,7 @@
       <p style="color:var(--text2);max-width:480px;line-height:1.75;font-size:.92rem">Moving images that tell stories,
         evoke emotion and make brands come alive.</p>
       <div class="motion-grid">
-        <div class="motion-card reveal">
+        <div class="motion-card reveal" onclick="openVideoPlayer('Brand Film Reel 2025', './Skubiq Video.mp4')">
           <div class="motion-bg" style="background:radial-gradient(circle at 50% 30%,#22203a,var(--frame) 70%)">
             <div class="motion-play">▶</div>
           </div>
@@ -2037,7 +2182,7 @@
             <div class="motion-sub">Showreel · 3:24</div>
           </div>
         </div>
-        <div class="motion-card reveal" style="transition-delay:.1s">
+        <div class="motion-card reveal" style="transition-delay:.1s" onclick="openVideoPlayer('Podcast Intro', './Vampire VFX.mp4')">
           <div class="motion-bg" style="background:radial-gradient(circle at 60% 40%,#2a1a30,var(--frame) 70%)">
             <div class="motion-play">▶</div>
           </div>
@@ -2213,6 +2358,25 @@
     </div>
   </div>
 
+  <!-- VIDEO PLAYER MODAL -->
+  <div class="video-player-overlay" id="videoPlayerOverlay">
+    <div class="video-player-container">
+      <button class="video-close-btn" id="videoCloseBtn" aria-label="Close video">✕</button>
+      <div class="video-title" id="videoTitle"></div>
+      <div class="video-player-wrapper">
+        <video id="videoElement" preload="metadata"></video>
+        <div class="video-player-controls">
+          <div class="video-controls-left">
+            <button class="video-control-btn" id="videoPlayBtn" title="Play/Pause">▶</button>
+            <div class="video-time">
+              <span id="videoCurrentTime">0:00</span> / <span id="videoDuration">0:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     (function () {
       "use strict";
@@ -2343,6 +2507,90 @@
         e.preventDefault();
         note.textContent = 'Thanks — your message is ready to send. Connect a backend or mailto link to deliver it.';
         form.reset();
+      });
+
+      /* ===== Video Player ===== */
+      var videoOverlay = document.getElementById('videoPlayerOverlay');
+      var videoElement = document.getElementById('videoElement');
+      var videoTitle = document.getElementById('videoTitle');
+      var videoPlayBtn = document.getElementById('videoPlayBtn');
+      var videoCloseBtn = document.getElementById('videoCloseBtn');
+      var videoCurrentTime = document.getElementById('videoCurrentTime');
+      var videoDuration = document.getElementById('videoDuration');
+      var isPlaying = false;
+      var lastVideoFocused = null;
+
+      function formatTime(seconds) {
+        if (!seconds || isNaN(seconds)) return '0:00';
+        var mins = Math.floor(seconds / 60);
+        var secs = Math.floor(seconds % 60);
+        return mins + ':' + (secs < 10 ? '0' : '') + secs;
+      }
+
+      window.openVideoPlayer = function (title, videoSrc) {
+        videoTitle.textContent = title;
+        videoElement.src = videoSrc;
+        isPlaying = false;
+        videoPlayBtn.textContent = '▶';
+        videoCurrentTime.textContent = '0:00';
+        videoDuration.textContent = '0:00';
+        lastVideoFocused = document.activeElement;
+        videoOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        videoElement.focus();
+      };
+
+      function closeVideoPlayer() {
+        videoOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+        videoElement.pause();
+        isPlaying = false;
+        videoPlayBtn.textContent = '▶';
+        if (lastVideoFocused) lastVideoFocused.focus();
+      }
+
+      // Play/Pause button
+      videoPlayBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (isPlaying) {
+          videoElement.pause();
+          videoPlayBtn.textContent = '▶';
+          isPlaying = false;
+        } else {
+          videoElement.play();
+          videoPlayBtn.textContent = '⏸';
+          isPlaying = true;
+        }
+      });
+
+      // Close button
+      videoCloseBtn.addEventListener('click', closeVideoPlayer);
+
+      // Click overlay to close
+      videoOverlay.addEventListener('click', function (e) {
+        if (e.target === videoOverlay) closeVideoPlayer();
+      });
+
+      // Escape key to close
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && videoOverlay.classList.contains('open')) closeVideoPlayer();
+      });
+
+      // Update time display
+      videoElement.addEventListener('timeupdate', function () {
+        videoCurrentTime.textContent = formatTime(videoElement.currentTime);
+        videoDuration.textContent = formatTime(videoElement.duration);
+      });
+
+      // Update duration when metadata loads
+      videoElement.addEventListener('loadedmetadata', function () {
+        videoDuration.textContent = formatTime(videoElement.duration);
+      });
+
+      // Auto-update button when video ends
+      videoElement.addEventListener('ended', function () {
+        videoPlayBtn.textContent = '▶';
+        isPlaying = false;
       });
 
     })();
