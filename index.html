@@ -20,6 +20,8 @@
        DESIGN TOKENS
     ============================================================ */
     :root {
+      color-scheme: dark;
+
       /* Palette – near‑black / frame surfaces / cool violet‑blue accent */
       --bg: #050507;
       --bg-2: #0a0a0d;
@@ -44,6 +46,7 @@
       --shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
       --shadow-2: 0 30px 100px rgba(0, 0, 0, 0.6);
       --overlay: linear-gradient(to top, rgba(5, 5, 7, 0.95) 0%, rgba(5, 5, 7, 0.25) 60%, transparent 100%);
+      --media-overlay: linear-gradient(to top, rgba(5, 5, 7, 0.85) 0%, rgba(5, 5, 7, 0.2) 55%, transparent 100%);
 
       /* Spacing (8‑pt grid) */
       --space-1: 0.5rem;  /* 8px  */
@@ -68,27 +71,50 @@
       --text-5xl: 3.5rem;
     }
 
-    [data-theme="light"] :root {
+    /* ============================================================
+       LIGHT THEME (correctly applied via :root[data-theme="light"])
+    ============================================================ */
+    :root[data-theme="light"] {
+      color-scheme: light;
+
       --bg: #f3f3f6;
       --bg-2: #ebebf0;
       --frame: #ffffff;
       --frame-2: #f5f5f9;
       --surface: rgba(20, 20, 30, 0.03);
       --surface-2: rgba(20, 20, 30, 0.05);
-      --border: rgba(20, 20, 30, 0.1);
+      --border: rgba(20, 20, 30, 0.10);
       --border-2: rgba(20, 20, 30, 0.16);
+
       --text: #131318;
       --text-2: rgba(19, 19, 24, 0.62);
       --text-3: rgba(19, 19, 24, 0.4);
+
       --accent: #5854e6;
       --accent-2: #4642c4;
       --accent-soft: rgba(88, 84, 230, 0.08);
       --accent-glow: rgba(88, 84, 230, 0.22);
       --pink-glow: rgba(155, 90, 220, 0.14);
+
       --nav-bg: rgba(243, 243, 246, 0.82);
       --shadow: 0 4px 30px rgba(20, 20, 30, 0.06);
       --shadow-2: 0 30px 80px rgba(20, 20, 30, 0.1);
       --overlay: linear-gradient(to top, rgba(243, 243, 246, 0.95) 0%, rgba(243, 243, 246, 0.25) 60%, transparent 100%);
+      --media-overlay: linear-gradient(to top, rgba(5, 5, 7, 0.6) 0%, rgba(5, 5, 7, 0.15) 55%, transparent 100%);
+    }
+
+    /* Light-theme component tweaks (media areas stay dark for readability) */
+    :root[data-theme="light"] .motion-play {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    :root[data-theme="light"] .service-card:hover {
+      box-shadow: 0 16px 40px rgba(20, 20, 30, 0.1);
+    }
+    :root[data-theme="light"] .form-input::placeholder,
+    :root[data-theme="light"] .form-textarea::placeholder {
+      color: var(--text-3);
     }
 
     @media (max-width: 768px) {
@@ -507,7 +533,7 @@
       background: var(--accent-soft);
     }
 
-    /* Mock browser window (added back) */
+    /* Mock browser window */
     .hero-frame-wrap {
       position: relative;
       z-index: 2;
@@ -937,7 +963,7 @@
     .project-overlay {
       position: absolute;
       inset: 0;
-      background: var(--overlay);
+      background: var(--media-overlay);
       opacity: 0.6;
       transition: opacity 0.45s ease;
     }
@@ -1229,6 +1255,10 @@
       font-size: var(--text-sm);
       padding: 0.75rem 0.9rem;
       transition: border-color 0.3s ease;
+    }
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-3);
     }
     .form-input:focus,
     .form-textarea:focus {
@@ -1565,10 +1595,18 @@
       transform: rotate(90deg);
     }
 
+    /* ---------- Tablet / Pad ---------- */
+    @media (max-width: 1024px) {
+      section { padding: var(--space-6) 0; }
+      .container { padding-inline: var(--space-4); }
+      .footer-top { flex-direction: column; }
+    }
+
     /* ---------- Small screens ---------- */
     @media (max-width: 640px) {
       section { padding: var(--space-6) 0; }
       .container { padding-inline: var(--space-4); }
+      .contact-form { padding: var(--space-5); }
     }
   </style>
   <noscript>
@@ -1614,7 +1652,6 @@
       </div>
     </div>
 
-    <!-- NEW: Browser mock frame (added to use existing CSS) -->
     <div class="hero-frame-wrap" hidden>
       <div class="hero-frame">
         <div class="hero-frame-bar">
@@ -1645,7 +1682,6 @@
   <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track" id="marqueeTrack">
-      <!-- Items duplicated via JS to keep animation seamless -->
     </div>
   </div>
 
@@ -1748,7 +1784,6 @@
       <h2 class="section-h2">Selected <em>projects</em></h2>
       <p class="section-intro">A curated selection spanning brand, motion, and design across diverse industries.</p>
       <div class="projects-grid">
-        <!-- Full project cards – keeping original structure and data -->
         <div class="project-card tall reveal" onclick="openModal('Beast Energy Packaging','Packaging Design','Complete packaging design system for Beast Energy – black aluminium cans with lime green accents and bold typography.','Client – Beast Energy','2026','Packaging · Can Design · Branding','Energy Drink.png')">
           <div class="project-placeholder"><img src="Energy Drink.png" alt="Energy drink packaging design"></div>
           <div class="project-overlay"></div>
@@ -1767,12 +1802,12 @@
         <div class="project-card reveal" onclick="openModal('Podcast Visual Identity','Podcast Branding','A complete visual identity and cover art system for a modern interview podcast.','Client – Podcast Studio','2026','Podcast · Cover Art','Podcast Visual Identity.png')">
           <div class="project-placeholder"><img src="Podcast Visual Identity.png" alt="Podcast visual identity design"></div>
           <div class="project-overlay"></div>
-          <div class="project-info"><div class="project-cat">Podcast Branding</div><div class="project-name">Podcast Cover Art &amp; Branding</div><div class="project-tags"><span class="project-tag">Podcast</span><span class="project-tag">Cover Art</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Podcast Visual Identity','Podcast Branding','A complete visual identity and cover art system for a modern interview podcast.','Client – Podcast Studio','2026','Podcast · Cover Art','Podcast Visual Identity.png')">Preview Project ↗</button></div>
+          <div class="project-info"><div class="project-cat">Podcast Branding</div><div class="project-name">Podcast Cover Art &amp; Branding</div><div class="project-tags"><span class="project-tag">Podcast</span><span class="project-tag">Cover Art</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Podcast Visual Identity','Podcast Branding','A complete visual identity and cover art system for a modern interview podcast.','Client – Podcast Studio','2026','Podcast · Cover Art','Podcast Visual Identity.png')">Preview Project ⬇</button></div>
         </div>
-        <div class="project-card wide reveal" onclick="openModal('Cinematic Travel Reel Edit','Video Editing','A cinematic travel edit shaped through pacing, color grading and sound design.','Client – Travel Creator','2026','Video · Color Grade · Sound Design','Travel Edit.mp4')">
+        <div class="project-card wide reveal" onclick="openVideoPlayer('Cinematic Travel Reel Edit','Travel Edit.mp4')">
           <div class="project-placeholder"><video src="Travel Edit.mp4" muted autoplay loop playsinline preload="metadata"></video></div>
           <div class="project-overlay"></div>
-          <div class="project-info"><div class="project-cat">Video Editing</div><div class="project-name">Cinematic Travel Reel Edit</div><div class="project-tags"><span class="project-tag">Video</span><span class="project-tag">Color Grade</span><span class="project-tag">Sound Design</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Cinematic Travel Reel Edit','Video Editing','A cinematic travel edit shaped through pacing, color grading and sound design.','Client – Travel Creator','2026','Video · Color Grade · Sound Design','Travel Edit.mp4')">Preview Project ↗</button></div>
+          <div class="project-info"><div class="project-cat">Video Editing</div><div class="project-name">Cinematic Travel Reel Edit</div><div class="project-tags"><span class="project-tag">Video</span><span class="project-tag">Color Grade</span><span class="project-tag">Sound Design</span></div><button class="preview-btn" onclick="event.stopPropagation();openVideoPlayer('Cinematic Travel Reel Edit','Travel Edit.mp4')">Preview Project ↗</button></div>
         </div>
         <div class="project-card reveal" onclick="openModal('Food App UI','UI Design','A clear and friendly mobile ordering experience designed around fast discovery.','Client – Food App','2026','UI Design · UX','Food App UI.png')">
           <div class="project-placeholder"><img src="Food App UI.png" alt="Food app user interface design"></div><div class="project-overlay"></div>
@@ -1780,11 +1815,11 @@
         </div>
         <div class="project-card reveal" onclick="openModal('Smart Watch Campaign','Product Design','A premium product visual system for a connected smartwatch launch.','Client – Wearable Brand','2026','Product · Campaign','Smart watch @4x.png')">
           <div class="project-placeholder"><img src="Smart watch @4x.png" alt="Smart watch product design"></div><div class="project-overlay"></div>
-          <div class="project-info"><div class="project-cat">Product Design</div><div class="project-name">Smart Watch Campaign</div><div class="project-tags"><span class="project-tag">Product</span><span class="project-tag">Campaign</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Smart Watch Campaign','Product Design','A premium product visual system for a connected smartwatch launch.','Client – Wearable Brand','2026','Product · Campaign','Smart watch @4x.png')">Preview Project ↗</button></div>
+          <div class="project-info"><div class="project-cat">Product Design</div><div class="project-name">Smart Watch Campaign</div><div class="project-tags"><span class="project-tag">Product</span><span class="project-tag">Campaign</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Smart Watch Campaign','Product Design','A premium product visual system for a connected smartwatch launch.','Client – Wearable Brand','2026','Product · Campaign','Smart watch @4x.png')">Preview Project ⬇</button></div>
         </div>
         <div class="project-card reveal" onclick="openModal('Album Cover Series','Album Art','Atmospheric album artwork designed to give an independent release a distinct visual voice.','Client – Independent Artist','2026','Album · Art Direction','Album Cover.png')">
           <div class="project-placeholder"><img src="Album Cover.png" alt="Album cover artwork"></div><div class="project-overlay"></div>
-          <div class="project-info"><div class="project-cat">Album Art</div><div class="project-name">Album Cover Series</div><div class="project-tags"><span class="project-tag">Album</span><span class="project-tag">Art Direction</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Album Cover Series','Album Art','Atmospheric album artwork designed to give an independent release a distinct visual voice.','Client – Independent Artist','2026','Album · Art Direction','Album Cover.png')">Preview Project ↗</button></div>
+          <div class="project-info"><div class="project-cat">Album Art</div><div class="project-name">Album Cover Series</div><div class="project-tags"><span class="project-tag">Album</span><span class="project-tag">Art Direction</span></div><button class="preview-btn" onclick="event.stopPropagation();openModal('Album Cover','Album Cover','Atmospheric album artwork designed to give an independent release a distinct visual voice.','Client – Independent Artist','2026','Album · CoverArt','Album Cover.png')">Preview Project ⬇</button></div>
         </div>
         <div class="project-card wide reveal" onclick="openModal('Social Media Designs','Social Media Design','A flexible social content system built for consistent, high-impact publishing.','Client – Digital Brand','2026','Social · Content Design','Social Media Designs.png')">
           <div class="project-placeholder"><img src="Social Media Designs.png" alt="Social media design system"></div><div class="project-overlay"></div>
